@@ -1,0 +1,104 @@
+CREATE DATABASE VD_2
+GO
+
+USE VD_2
+GO
+
+CREATE TABLE role(
+	id bigint not null identity(1, 1) primary key,
+	name varchar(150) not null,
+	code varchar(150) not null
+)
+GO
+
+CREATE TABLE Users
+(
+	Id BIGINT IDENTITY (1,1) NOT NULL,
+	UserName VARCHAR(50) NOT NULL,
+	PassWord VARCHAR(50) NOT NULL,
+	FullName VARCHAR(50) NOT NULL,
+	Address NVARCHAR(100) NULL,
+	PhoneNum VARCHAR(15) NULL,
+	RoleId BIGINT NOT NULL,
+	Gender BIT NULL,
+	DOB DATE NULL
+
+	PRIMARY KEY(Id)
+)
+GO
+
+ALTER TABLE Users ADD CONSTRAINT fk_Users_role FOREIGN KEY(RoleId) REFERENCES role(id)
+GO
+
+CREATE TABLE category
+(
+	id BIGINT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+	Name NVARCHAR(255) NOT NULL,
+	SoLuong INT NULL,
+	code varchar(255) not null
+)
+GO
+
+CREATE TABLE Sân
+(
+	Id BIGINT IDENTITY (1,1) NOT NULL,
+	categoryid BIGINT NOT NULL,
+	name VARCHAR(150) NOT NULL,
+	Date_Open DATE NULL,
+	Price FLOAT NOT NULL,
+	Status BIT NOT NULL,
+    Time DATETIME NULL
+
+	PRIMARY KEY(Id)
+
+	FOREIGN KEY(categoryid) REFERENCES dbo.category(id)
+)
+GO
+
+
+CREATE TABLE match
+(
+	Id BIGINT IDENTITY (1,1) NOT NULL,
+	Id_Sân BIGINT NOT NULL,
+	Time_Start DATETIME NOT NULL,
+	Time_End DATETIME NOT NULL,
+	Status BIT NOT NULL,
+	Date_Open DATE NOT NULL
+
+	PRIMARY KEY(Id)
+
+	FOREIGN KEY(Id_Sân) REFERENCES dbo.Sân(Id)
+)
+GO
+
+CREATE TABLE Times
+(
+	Id BIGINT IDENTITY (1,1) NOT NULL,
+	Id_Sân BIGINT NOT NULL,
+	Time_Start DATETIME NOT NULL,
+	Time_End DATETIME NOT NULL
+	
+	PRIMARY KEY(Id)
+
+	FOREIGN KEY(Id_Sân) REFERENCES dbo.Sân(Id)
+)
+GO
+
+
+CREATE TABLE bill
+(
+	Id BIGINT IDENTITY (1,1) NOT NULL,
+	id_match BIGINT UNIQUE NOT NULL,
+	Id_Client BIGINT NOT NULL,
+	Date DATE NOT NULL,
+	total FLOAT NOT NULL,
+	Status BIT NOT NULL
+
+	PRIMARY KEY(Id)
+)
+GO
+
+ALTER TABLE bill ADD FOREIGN KEY(id_match) REFERENCES match(Id)
+
+ALTER TABLE bill ADD FOREIGN KEY(Id_Client) REFERENCES dbo.Users(Id)
+
