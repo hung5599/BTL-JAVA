@@ -1,0 +1,242 @@
+:root {
+    --tone: #CDF0EA;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif ;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+}
+
+/*Header*/
+header {
+    background-color: #CDF0EA;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    align-items: center;
+}
+
+header .con1 #logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 5px;
+}
+
+.con1 {
+    height: 100%;
+    width: 30%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+.con1 #name {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.con2 {
+    height: 100%;
+    width: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.con2 ul {
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.con2 ul li {
+    display: inline-block;
+    margin: 0 10px 0 10px;
+    font-size: large;
+    list-style: none;
+    color: black;
+    font-weight: bold;
+    height: 100%;
+    line-height: 60px;
+}
+
+.con2 ul li a {
+    height: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.con2 li:hover {
+    color: gray;
+    cursor: pointer;
+    border-bottom: black solid 5px;
+
+}
+
+/*SLIDER*/
+.slider {
+    width: 100%;
+    height: 650px;
+    margin-top: 0px;
+}
+
+#carouselExampleIndicators img {
+    width: 100%;
+    height: 650px;
+}
+.slider .slogan{
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    color: white;
+    font-size: 1.5cm;
+    text-align: center;
+    font-family: 'Roboto Slab',serif;
+    word-spacing: 15px;
+}
+.slider .hider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: gray;
+    opacity: 0.5;
+}
+.slider .seacher{
+    width: 100%;
+    position: absolute;
+    top: 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7%;
+}
+.slider .seacher input{
+    width: 40%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    font-size: large;
+    box-sizing: border-box;
+    border: var(--tone) solid 1px;
+    padding-left: 20px;
+}
+.slider .seacher button{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--tone);
+    font-family: 'Montserrat',sans-serif ;
+    border-radius: 0 10px 10px 0;
+    border:var(--tone) solid 1px;
+}
+/*NEWS*/
+.news {
+    height: 400px;
+    background-color: var(--tone);
+}
+
+.news .info {
+    height: 100%;
+    background-color: var(--tone);
+    display: flex;
+    justify-content: space-around;
+}
+
+.news .info .paper {
+    width: 30%;
+    background-color: var(--tone);
+
+}
+
+.news .info .paper img {
+    width: 94%;
+    margin: 5% 3% 0 3%;
+    height: 60%;
+    border-radius: 5px;
+}
+
+.news .info .paper .text {
+    height: 24%;
+    margin: 5% 0 0 3%;
+    width: 94%;
+    background-color: var(--tone);
+    padding: 5px;
+}
+
+.news .info p:hover {
+    color: gray;
+    text-decoration: underline;
+    cursor: pointer;
+}
+/*INFORMATION*/
+.info{
+    background-color: #7895B2;
+    height:200px;   
+}
+.info .con1{
+    height: 70%;
+    width: 90%;
+    background-color: #7895B2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid black 2px;
+    margin-left: 5%; 
+}
+.info .con1 .content {
+    width: 30%;
+    text-align: center;
+}
+.info .con1 .content li{
+    text-align: center;
+    list-style: none;
+}
+.info .con1 .content li a{
+    text-decoration: none;
+    color: black;
+}
+.info .con1 .content ul li:first-child{
+    font-weight: bold;
+}
+.info .con1 .content li a:hover{
+    color: white;
+}
+.info .con2{
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.info .con2 .about {
+    width: 50%;
+    height: 100%;
+}
+.info .con2 .about .in4 {
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    font-size:small;
+    color: black;
+}
+.info .con2 .about .in4 a{
+    text-decoration: none;
+    color: black;
+}
+.info .con2 .about .in4 a:hover{
+    color: white;
+}

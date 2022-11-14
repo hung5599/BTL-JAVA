@@ -1,0 +1,112 @@
+{
+  "Booking": [
+    {
+      "categoryId": 1,
+      "id_san": 1,
+      "price": 250,
+      "id_user": "Đăng nhập",
+      "time": "7pm to 9pm",
+      "dateOpen": "14/11/2022",
+      "id": 1
+    },
+    {
+      "categoryId": 1,
+      "id_san": 2,
+      "price": 350,
+      "id_user": "Đăng nhập",
+      "time": "7am to 9am",
+      "dateOpen": "15/11/2022",
+      "id": 2
+    },
+    {
+      "categoryId": 1,
+      "id_san": 3,
+      "price": 200,
+      "id_user": "Đăng nhập",
+      "time": "5pm to 7pm",
+      "dateOpen": "13/11/2022",
+      "id": 3
+    },
+    {
+      "categoryId": 1,
+      "id_san": 1,
+      "price": 250,
+      "id_user": "Đăng nhập",
+      "time": "5am to 7am",
+      "dateOpen": "12/11/2022",
+      "id": 4
+    },
+    {
+      "categoryId": 1,
+      "id_san": 1,
+      "price": 250,
+      "id_user": "Đăng nhập",
+      "time": "5pm to 7pm",
+      "dateOpen": "13/11/2022",
+      "id": 5
+    },
+    {
+      "categoryId": 1,
+      "id_san": 2,
+      "price": 350,
+      "id_user": "Đăng nhập",
+      "time": "5pm to 7pm",
+      "dateOpen": "14/11/2022",
+      "id": 6
+    },
+    {
+      "categoryId": 1,
+      "id_san": 5,
+      "price": 300,
+      "user_name": "Đăng nhập",
+      "time": "5pm to 7pm",
+      "dateOpen": "15/11/2022",
+      "id": 7
+    },
+    {
+      "categoryId": 1,
+      "id_san": 6,
+      "price": 300,
+      "user_name": "Đăng nhập",
+      "time": "5am to 7am",
+      "dateOpen": "12/11/2022",
+      "id": 8
+    },
+    {
+      "categoryId": 1,
+      "id_san": 8,
+      "price": 450,
+      "user_name": "Đăng nhập",
+      "time": "5am to 7am",
+      "dateOpen": "12/11/2022",
+      "id": 9
+    },
+    {
+      "categoryId": 2,
+      "id_san": 1,
+      "price": 100,
+      "user_name": "Đăng nhập",
+      "time": "5am to 7am",
+      "dateOpen": "12/11/2022",
+      "id": 10
+    },
+    {
+      "categoryId": 2,
+      "id_san": 3,
+      "price": 100,
+      "user_name": "Đăng nhập",
+      "time": "5am to 7am",
+      "dateOpen": "12/11/2022",
+      "id": 11
+    },
+    {
+      "categoryId": 3,
+      "id_san": 3,
+      "price": 100,
+      "user_name": "Đăng nhập",
+      "time": "5am to 7am",
+      "dateOpen": "12/11/2022",
+      "id": 12
+    }
+  ]
+}

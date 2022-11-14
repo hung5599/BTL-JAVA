@@ -1,0 +1,336 @@
+
+:root { 
+    --border-color: #f5f0f0;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.space {
+    height: 19px;
+}
+
+.justify-content {
+    margin-top: 28px;
+    justify-content: space-between;
+}
+
+/* Animation lớp phủ của modal đậm dần */
+@keyframes FaceIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation hiện modal từ nhỏ tới lớn */
+@keyframes Growth {
+    from {
+        transform: scale(var(--growth-from-size));
+    }
+    to {
+        transform: scale(var(--growth-to-size));
+    }
+}
+
+/* Modal */
+.auth-form { 
+    width: 500px;
+}
+.modal__1 { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Giup cho body co the can giua */
+    display: none;
+    animation: FaceIn linear 0.2s;
+}
+
+/* Class để mở form đăng kí, đăng nhập */
+.open {
+    display: flex;
+}
+
+/* Ẩn form đăng nhập */
+.remove {
+    display: none;
+}
+
+/* lớp phủ mờ */
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0,0, 0.3);
+}
+
+/* Khung bao form đăng kí */
+.modal__body {
+    --growth-from-size: 0.6;
+    --growth-to-size: 1;
+    background-color: #fff;
+    position: relative;
+    /* Can giua */
+    margin: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: Growth linear 0.2s;
+    z-index: 1;
+}
+
+/* Authen modal */
+
+/* Khung bao các ô input đến trước face vầ google */
+.auth-form__container {
+    padding: 0 32px;
+    padding-top: 32px;
+}
+
+/* Chứa chữ đăng ký và đăng nhập */
+.auth-form__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* CSS nút đăng ký */
+.auth-form__heading {
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* CSS nut Dang nhap */
+.auth-foorm__switch-btn {
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: rgb(244, 66, 66);
+}
+
+/* Khoảng cách giữa các ô input */
+.auth-form__form {
+    margin-top: 24px;
+}
+
+/* Css các ô input */
+.auth-form__input {
+    width: 436px;
+    height: 51px;
+    padding: 0 12px;
+    outline: none;
+    border: 1px solid rgb(230, 227, 227);
+    border-radius: 3px;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+}
+
+/* Nổi viền khi focus vào ô input */
+.auth-form__input:focus {
+    border-color: #888;
+}
+
+.auth-form__aside {
+    display: flex;
+}
+
+/* Css chính sách và điều khoản */
+.auth-form__policy-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.8rem;
+    margin-top: 8px;
+}
+
+/* Css chính sách và bảo mật chữ: Sporting Complex */
+.auth-form__text-link {
+    text-decoration: none;
+    color: rgb(237, 67, 67);
+}
+
+/* Css thẻ chứa trở lại và đăng ký */
+.auth-form__control {
+    margin-top: 43px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Css buttom trở lại và đăng ký */
+.modal__btn {
+    min-width: 142px;
+    min-height: 36px;
+    border: none;
+    line-height: 1px;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+/* Css buttom đăng ký */
+.modal__btn.btn--primay {
+    color: #fff;
+    background-color: rgb(248, 17, 17);
+}
+
+/* Css nút trở lại */
+.modal__btn.btn-back {
+    color: #000;
+    margin-right: 8px;
+}
+
+.modal__btn:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* Css thẻ chứa face và google */
+.auth-form__side {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ebe8e8cd;
+    padding: 16px 32px;
+}
+
+/* Css thẻ a chưa liên kết face và google */
+.btn__icon {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Css face */
+.face {
+    background-color: #3a5a98;
+    padding: 10px 0;
+}
+
+/* Css google */
+.gg {
+    color: #fff;
+    background-color: rgb(233, 33, 33);
+    padding: 10px 0;
+}
+
+/* Css face và google */
+.btn__icon.btn-size-s {
+    min-height: 32px;
+    line-height: 100%;
+    font-size: 16px;
+    padding-right: 8px;
+}
+
+.btn__icon.btn-size-s:hover {
+    opacity: 0.8;
+}
+
+.face:hover {
+    color: #fff;
+}
+.gg:hover{
+    color: #fff;
+    opacity: 0.5;
+}
+
+/* Css icon face và google */
+.size{
+    font-size: 24px;
+    padding: 0 8px;
+}
+
+
+/* CSS form Đăng nhập */
+
+/* CSS cho block Quên mật khẩu và cần trợ giúp */
+.auth-form__help {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* CSS cho 2  dòng chữ Quên mật khẩu và Cần trợ giúp */
+.auth-form__aside-help-link {
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* CSS cho dấu gạch giữa Quên mật khẩu và Cần trợ giúp */
+.auth-form__border {
+    display: block;
+    height: 22px;
+    margin: 0 16px;
+    border-left: 1px solid #EAEAEA;
+}
+
+/* CSS dòng chữ Quên mật khẩu */
+.auth-form__aside-help-forgot {
+    color: rgb(248, 17, 17);
+}
+.auth-form__aside-help-forgot:hover {
+    color: rgb(248, 17, 17);
+}
+
+/* CSS dòng chữ Cần trợ giúp */
+.auth-form__aside-help-help {
+    color: #000;
+}
+.auth-form__aside-help-help:hover {
+    color: #000;
+}
+
+/* CSS form quên mật khẩu */
+
+.auth-form__heading-forgot {
+    font-size: 1.2rem;
+    margin-left: 32%;
+    font-weight: 600;
+}
+.btn__send-password,
+.btn__send-number {
+    border: none;
+    color: #fff;
+    margin-bottom: 12px;
+    padding: 12px 20px;
+    background-color: rgb(45, 45, 231);
+}
+
+.title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.btn__send-password:hover,
+.btn__send-number:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.code {
+    width: 100%;
+    height: 42px;
+    border-radius: 5px;
+    font-size: 17px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+}
+
+.forgot__header {
+    padding: 20px 0;
+    background-color: #CDF0EA;
+}
+
+.btn__send-massage {
+    background-color: #CDF0EA;
+}
+
+.auth-form__container-forgot {
+    padding-left: 32px;
+}

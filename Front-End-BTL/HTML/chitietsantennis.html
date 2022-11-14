@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitietsan</title>
+    <link rel="stylesheet" href="/Front-End-BTL/CSS/chitietsan.css">
+    <link rel="stylesheet" href="/Front-End-BTL/font/css/all.css">
+    <style>
+        body{
+            overflow-x: hidden;
+            background-image: url(/Front-End-BTL/img/santennis/background.jpg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="con1">
+            <img id="logo" src="/Front-End-BTL/img/logo.png" alt="">
+            <span id="name">SPORTING COMPLEX</span>
+        </div>
+        <div class="con2">
+            <ul>
+                <li class="items"><a href="http://127.0.0.1:3000/index.html">Trang chủ</a></li>
+                <li class="items"><a href="http://127.0.0.1:3000/datsan.html">Đặt sân</a></li>
+                <li class="items"><a href="">Khóa học</a></li>
+                <li class="items"><a href="http://127.0.0.1:3000/dangnhap.html" >Đăng nhập</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="middle">
+        <div class="tmp"></div>
+        <div class="con">
+            <div class="book" name="book">
+                <div class="image">
+                    <img src="/Front-End-BTL/img/santennis/san1.jpg" alt="">
+                </div>
+                <h3> STN 1 </h3>
+                <div class="price">Giá thuê sân <span> 150</span>k/h </div>
+                <label for="days" >Ngày :</label>
+                <select name="days" id="days">
+                <option value="day1"></option>
+                <option value="day2"></option>
+                <option value="day3"></option>
+                <option value="day4"></option>
+                </select>
+                <label for="times" >Khung giờ :</label>
+                <select name="times" id="times">
+                <option value="time1">5am to 7am</option>
+                <option value="time2">7am to 9am</option>
+                <option value="time3">5pm to 7pm</option>
+                <option value="time4">7pm to 9pm</option>
+                </select>
+                <button id ="1" onclick ="getBtnId(this.id)"> Dat san</button>
+            </div>
+            <div class="book" name="book">
+                <div class="image">
+                    <img src="/Front-End-BTL/img/santennis/san2.jpg" alt="">
+                </div>
+                <h3> STN 2  </h3>
+                <div class="price">Giá thuê sân <span> 150</span>k/h </div>
+                <label for="days" >Ngày :</label>
+                <select name="days" id="days">
+                <option value="day1"></option>
+                <option value="day2"></option>
+                <option value="day3"></option>
+                <option value="day4"></option>
+                </select>
+                <label for="times" >Khung giờ :</label>
+                <select name="times" id="times">
+                <option value="time1">5am to 7am</option>
+                <option value="time2">7am to 9am</option>
+                <option value="time3">5pm to 7pm</option>
+                <option value="time4">7pm to 9pm</option>
+                </select>
+                <button id ="2" onclick ="getBtnId(this.id)"> Dat san</button>
+            </div>
+            <div class="book" name="book">
+                <div class="image">
+                    <img src="/Front-End-BTL/img/santennis/san3.jpg" alt="">
+                </div>
+                <h3> STN 3  </h3>
+                <div class="price">Giá thuê sân <span> 150</span>k/h </div>
+                <label for="days" >Ngày :</label>
+                <select name="days" id="days">
+                <option value="day1"></option>
+                <option value="day2"></option>
+                <option value="day3"></option>
+                <option value="day4"></option>
+                </select>
+                <label for="times">Khung giờ :</label>
+                <select name="times" id="times">
+                <option value="time1">5am to 7am</option>
+                <option value="time2">7am to 9am</option>
+                <option value="time3">5pm to 7pm</option>
+                <option value="time4">7pm to 9pm</option>
+                </select>
+                <button id ="3" onclick ="getBtnId(this.id)"> Dat san</button>
+            </div>
+        </div>
+        <div class="con">
+            <div class="book" name="book">
+                <div class="image">
+                    <img src="/Front-End-BTL/img/santennis/san4.jpg" alt="">
+                </div>
+                <h3> STN 4 </h3>
+                <div class="price">Giá thuê sân <span> 150</span>k/h </div>
+                <label for="days" >Ngày :</label>
+                <select name="days" id="days">
+                <option value="day1"></option>
+                <option value="day2"></option>
+                <option value="day3"></option>
+                <option value="day4"></option>
+                </select>
+                <label for="times">Khung giờ :</label>
+                <select name="times" id="times">
+                <option value="time1">5am to 7am</option>
+                <option value="time2">7am to 9am</option>
+                <option value="time3">5pm to 7pm</option>
+                <option value="time4">7pm to 9pm</option>
+                </select>
+                <button id ="4" onclick ="getBtnId(this.id)"> Dat san</button>
+            </div>
+            <div class="book" name="book">
+                <div class="image">
+                    <img src="/Front-End-BTL/img/santennis/san5.png" alt="">
+                </div>
+                <h3> STN 5  </h3>
+                <div class="price">Giá thuê sân <span> 150</span>k/h </div>
+                <label for="days" >Ngày :</label>
+                <select name="days" id="days">
+                <option value="day1"></option>
+                <option value="day2"></option>
+                <option value="day3"></option>
+                <option value="day4"></option>
+                </select>
+                <label for="times" >Khung giờ :</label>
+                <select name="times" id="times">
+                <option value="time1">5am to 7am</option>
+                <option value="time2">7am to 9am</option>
+                <option value="time3">5pm to 7pm</option>
+                <option value="time4">7pm to 9pm</option>
+                </select>
+                <button id ="5" onclick ="getBtnId(this.id)"> Dat san</button>
+            </div>
+            <div class="book" name="book">
+                <div class="image">
+                    <img src="/Front-End-BTL/img/santennis/san6.jpg" alt="">
+                </div>
+                <h3> STN 6  </h3>
+                <div class="price">Giá thuê sân <span> 150</span>k/h </div>
+                <label for="days" >Ngày :</label>
+                <select name="days" id="days">
+                <option value="day1"></option>
+                <option value="day2"></option>
+                <option value="day3"></option>
+                <option value="day4"></option>
+                </select>
+                <label for="times">Khung giờ :</label>
+                <select name="times" id="times">
+                <option value="time1">5am to 7am</option>
+                <option value="time2">7am to 9am</option>
+                <option value="time3">5pm to 7pm</option>
+                <option value="time4">7pm to 9pm</option>
+                </select>
+                <button id ="6" onclick ="getBtnId(this.id)"> Dat san</button>
+            </div>  
+        </div>
+    </div>
+    <script src="/Front-End-BTL/JS/chitietsan.js"></script>
+</body>
+</html>
