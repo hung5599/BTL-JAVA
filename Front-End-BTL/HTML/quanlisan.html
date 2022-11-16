@@ -32,16 +32,11 @@
         <div class="manage_table football_table">
             <div class="method">
                 <h2>Sân bóng đá</h2>
-                <button class="add_btn"><i class="fa-regular fa-square-plus"></i>Thêm sân </button>
             </div>
             <table class="table1">
                 <tr>
-                    <th>Sân đặt</th>
-                    <th>Tên người đặt</th>
-                    <th>Thời gian bắt đầu </th>
-                    <th>Thời gian kết thúc</th>
-                    <th>Ngày</th>
-                    <th>Trạng thái</th>
+                    <th>Sân</th>
+                    <th>Giá thuê</th>
                     <th>Tác vụ</th>
                 </tr>
             </table>
@@ -49,16 +44,11 @@
         <div class="manage_table badminton_table">
             <div class="method">
                 <h2>Sân cầu lông </h2>
-                <button class="add_btn"><i class="fa-regular fa-square-plus"></i>Thêm sân </button>
             </div>
             <table class="table1">
                 <tr>
-                    <th>Sân đặt</th>
-                    <th>Tên người đặt</th>
-                    <th>Thời gian bắt đầu </th>
-                    <th>Thời gian kết thúc</th>
-                    <th>Ngày</th>
-                    <th>Trạng thái</th>
+                    <th>Sân</th>
+                    <th>Giá thuê</th>
                     <th>Tác vụ</th>
                 </tr>
             </table>
@@ -66,22 +56,40 @@
         <div class="manage_table tennis_table">
             <div class="method">
                 <h2>Sân tennis</h2>
-                <button class="add_btn"><i class="fa-regular fa-square-plus"></i>Thêm sân </button>
             </div>
             <table class="table1">
                 <tr>
-                    <th>Sân đặt</th>
-                    <th>Tên người đặt</th>
-                    <th>Thời gian bắt đầu </th>
-                    <th>Thời gian kết thúc</th>
-                    <th>Ngày</th>
-                    <th>Trạng thái</th>
+                    <th>Sân</th>
+                    <th>Giá thuê</th>
                     <th>Tác vụ</th>
                 </tr>
             </table>
         </div>
+        <button class="add_btn" onclick="showAddBox()"><i class="fa-regular fa-square-plus"></i>Thêm sân </button>
     </div>
-
-    <script src="/Front-End-BTL/JS/admin.js"></script>
+    <div class="add-box">
+        <div class="close"> <button class="close-btn" onclick="closeAddBox()"><i class="fa-solid fa-square-xmark"></i></button></div>
+        <h3>Thêm sân mới</h3>
+        <div class="form-group">
+            <label for="id_san">Id sân : </label>
+            <input type="text" name="id_san">
+        </div>
+        <div class="form-group">
+            <label for="categoryId"> Loại sân : </label>
+            <select name="categoryId" id="categoryId" >
+                <option value="1">Sân bóng đá</option>
+                <option value="2">Sân cầu lông</option>
+                <option value="3">Sân tennis</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="price"> Giá thuê : </label>
+            <input type="text" name="price">
+        </div>
+        <button class="update-btn" onclick="updateNewSanToTable()">Cập nhật</button>
+    </div>
+    <div class="edit-box">
+    </div>
+    <script src="/Front-End-BTL/JS/quanlisan.js"></script>
 </body>
 </html>

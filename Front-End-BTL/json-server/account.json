@@ -1,0 +1,24 @@
+{
+  "accounts": [
+    {
+      "user_name": "abcd",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "user_name": "canhhung592@",
+      "password": "1234567",
+      "id": 2
+    },
+    {
+      "user_name": "hung",
+      "password": "abcd1234",
+      "id": 3
+    },
+    {
+      "user_name": "hanbn2002",
+      "password": "12345678",
+      "id": 4
+    }
+  ]
+}

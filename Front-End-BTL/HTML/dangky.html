@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ĐĂNG KÝ TÀI KHOẢN</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<link rel="stylesheet" href="/Front-End-BTL/CSS/dangky.css">
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h2 class="text-center">ĐĂNG KÝ TÀI KHOẢN</h2>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+				  <label for="usr">Tên đăng nhập</label>
+				  <input required="true" type="text" class="form-control" id="usr">
+				</div>
+				</div>
+				<div class="form-group">
+				  <label for="pwd">Mật khẩu</label>
+				  <input required="true" type="password" class="form-control" id="pwd">
+				</div>
+				<div class="form-group">
+				  <label for="confirmation_pwd">Xác nhận lại mật khẩu</label>
+				  <input required="true" type="password" class="form-control" id="confirmation_pwd">
+				</div>
+				<input type="checkbox" id="confirm" name="confirm" value="OK">
+				<label for="confirm">Đồng ý với điều khoản của chúng tôi </label>
+				<br>
+				<a href="">Điều khoản và chính sách</a>
+				<br>
+				<button id="btn-success" class="btn btn-success" onclick="getUsernameAndPassword()">Register</button>
+
+			</div>
+		</div>
+	</div>
+	<script src="/Front-End-BTL/JS/dangky.js"></script>
+</body>
+</html>

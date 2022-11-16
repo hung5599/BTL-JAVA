@@ -1,3 +1,4 @@
+//Fetch API
 var billAPI= 'http://localhost:3000/Bills'
 function main(){
     getBill()
