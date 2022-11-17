@@ -12,6 +12,7 @@ function setDay(){
     }
 }
 setDay()
+getBtnId()
 // POST DATA TO JSON
 var bookingAPI = "http://localhost:3000/Booking"
 function createBooking(data){
@@ -27,24 +28,30 @@ function createBooking(data){
             response.json()
         })
 }
-function getBtnId(i){
-    var san = document.querySelectorAll('.book h3')[i-1].textContent
-    var price = document.querySelectorAll('.book .price span')[i-1].textContent
-    var select1 = document.querySelectorAll('.book #times')[i-1]
-    var time = select1.options[select1.selectedIndex].text
-    var select2 = document.querySelectorAll('.book #days')[i-1]
-    var day = select2.options[select2.selectedIndex].text
-    var user = document.querySelectorAll(".con2 ul li a ")[3].text
-    var Object = {
-        "categoryId" : getCategoryId(san.slice(1,4)),
-        "id_san" :     parseInt(san.slice(5,6)),
-        "price" :parseInt(price),
-        "user_name" : user,
-        "time" : time,
-        "dateOpen" : day
-    }
-    createBooking(Object)
-    alert("Đặt sân thành công !")  
+function getBtnId(){
+    var x = document.querySelectorAll(".middle .con .book button")
+    console.log(x)
+    for(let i=0;i<x.length;i++){
+        x[i].onclick  = function(){
+            var san = document.querySelectorAll('.book h3')[i].textContent
+            var price = document.querySelectorAll('.book .price span')[i].textContent
+            var select1 = document.querySelectorAll('.book #times')[i]
+            var time = select1.options[select1.selectedIndex].text
+            var select2 = document.querySelectorAll('.book #days')[i]
+            var day = select2.options[select2.selectedIndex].text
+            var user = document.querySelectorAll(".con2 ul li a ")[3].text
+            var Object = {
+                "categoryId" : getCategoryId(san.slice(1,4)),
+                "id_san" :     parseInt(san.slice(5,6)),
+                "price" :parseInt(price),
+                "user_name" : user,
+                "time" : time,
+                "dateOpen" : day
+            }   
+            createBooking(Object)
+            alert("Đặt sân thành công !") 
+        }
+    } 
     // console.log(Object)
 }
 function getCategoryId(x){
