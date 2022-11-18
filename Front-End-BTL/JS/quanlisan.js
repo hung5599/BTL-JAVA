@@ -1,5 +1,18 @@
 
 //CSS Function
+
+function setOnclick(){
+    var x = document.querySelector(".content .add_btn")
+    console.log(x)
+    x.addEventListener("click",showAddBox)
+    var y = document.querySelector(".close-add-btn")
+    y.addEventListener("click",closeAddBox)
+    var z = document.querySelector(".update-btn")
+    z.addEventListener("click",renderNewSanToTable)
+    var t = document.querySelector(".close-modal")
+    t.onclick = closeModal
+
+}
 function showAddBox(){
     var x = document.querySelector(".add-box")
     x.style.display ="block"
@@ -8,18 +21,16 @@ function closeAddBox(){
     var x = document.querySelector(".add-box")
     x.style.display ="none"
 }
-function closeModel(){
-    var x = document.querySelector(".model")
+function closeModal(){
+    var x = document.querySelector(".modal")
     x.style.display ="none"
-}
-function openModel(){
-    var x = document.querySelector(".model")
-    x.style.display ="block"
 }
 //Fetch API
 var sanAPI= 'http://localhost:3000/san'
 function main(){
     getSan()
+    setOnclick()
+
 }
 main()
 //Function
@@ -65,7 +76,7 @@ function deleteSan(id,callback){
 //FETCH PATCH
 function updateSan(data,id){
     var option={
-        method: "PUT",
+        method: "PATCH",
         headers: { 
             'Content-Type': 'application/json' 
         },
@@ -76,6 +87,7 @@ function updateSan(data,id){
             return response.json()
         })
 }
+//Other function
 function renderSanToTable(sans){
     var table = document.querySelectorAll(".manage_table .table1")
     sans.map(function(san){
@@ -91,11 +103,11 @@ function addNewSanToTable(table,san){
             if(j==2) newCell1.appendChild(document.createTextNode(getStatus(san.status)))
             if(j==3) newCell1.innerHTML =   `
             <button class="btn" onclick="deleteSan(${san.id},saveRowData(this,${san.categoryId-1}))" ><i class="fa-solid fa-trash-can"></i> Xóa </button>
-            <button class="btn" onclick="handleUpdateSan(${san.id})" ><i class="fa-solid fa-pen-to-square"></i> Chỉnh thông tin sân </button> 
+            <button class="btn fix-btn" onclick="handleUpdateSan(${san.id},${san.categoryId})" ><i class="fa-solid fa-pen-to-square"></i> Chỉnh thông tin sân </button> 
                                                    `
         }
 }
-
+// Luu san bi xoa va xoa san bi xoa khoi man hinh
 function saveRowData(r,x) {
     var i = r.parentNode.parentNode.rowIndex;
     table = document.querySelectorAll(".table1");
@@ -108,6 +120,7 @@ function saveRowData(r,x) {
     table[x].deleteRow(i)
     return result;
 }
+// Render san moi tao ra bang
 function renderNewSanToTable(){
     var inp = document.querySelectorAll('.content .add-box .form-group input')
     var id_san = inp[0].value
@@ -129,20 +142,22 @@ function renderNewSanToTable(){
         postSan(tmp)
     }
 }
-function handleUpdateSan(id){
-    openModel()
-    var newPrice = parseInt(document.querySelector('.model .update-form .form-group input[name="newPrice"').value)
-    var select2 = document.getElementById("newStatus")
-    var newStatus = parseInt(select2.options[select2.selectedIndex].value)
-    san.price = newPrice
-    san.status = newStatus
-    var updated ={
-        id_san : san.id,
-        categoryId : san.categoryId,
-        price : newPrice,
-        status : newStatus
-    }
-    updateSan(id,updated)
+function handleUpdateSan(id,categoryId){
+    var x = document.querySelector(".modal")
+    x.style.display ="block"
+    var y= document.querySelector(".modal .update-form .update")
+    y.addEventListener("click",function(){
+        var newPrice = parseInt(document.querySelector('.modal .update-form .form-group input[name="newPrice"]').value)
+        var select2 = document.getElementById("newStatus")
+        var newStatus = parseInt(select2.options[select2.selectedIndex].value)
+        var updated ={
+            id_san : id,
+            categoryId : categoryId,
+            price : newPrice,
+            status : newStatus
+        }
+        updateSan(updated,id)
+    })
 }
 function getStatus(i){
     if(i==1) return "Tốt"

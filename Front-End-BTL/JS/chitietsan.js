@@ -40,14 +40,16 @@ function getBtnId(){
             var select2 = document.querySelectorAll('.book #days')[i]
             var day = select2.options[select2.selectedIndex].text
             var user = document.querySelectorAll(".con2 ul li a ")[3].text
+
             var Object = {
-                "categoryId" : getCategoryId(san.slice(1,4)),
-                "id_san" :     parseInt(san.slice(5,6)),
+                "categoryId" : parseInt(getCategoryId(san.split(" ")[0])),
+                "id_san" :     parseInt(san.split(" ")[1]),
                 "price" :parseInt(price),
                 "user_name" : user,
                 "time" : time,
                 "dateOpen" : day
             }   
+            console.log(Object)
             createBooking(Object)
             alert("Đặt sân thành công !") 
         }

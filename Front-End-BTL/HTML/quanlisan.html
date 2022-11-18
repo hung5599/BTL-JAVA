@@ -68,9 +68,9 @@
                 </tr>
             </table>
         </div>
-        <button class="add_btn " onclick="showAddBox()"><i class="fa-regular fa-square-plus"></i>Thêm sân </button>
+        <button class="add_btn " ><i class="fa-regular fa-square-plus"></i>Thêm sân </button>
         <div class="add-box">
-            <div class="close"> <button class="close-btn" onclick="closeAddBox()"><i class="fa-solid fa-square-xmark"></i></button></div>
+            <div class="close"> <button class="close-btn close-add-btn" ><i class="fa-solid fa-square-xmark"></i></button></div>
             <h3>Thêm sân mới</h3>
             <div class="form-group">
                 <label for="id_san">Id sân : </label>
@@ -95,13 +95,13 @@
                 <label for="price"> Giá thuê : </label>
                 <input type="text" name="price" required>
             </div>
-            <button class="update-btn" onclick="renderNewSanToTable()">Cập nhật</button>
+            <button class="update-btn" >Cập nhật</button>
         </div>
     </div>
-    <div class="model ">
+    <div class="modal">
         <form class="update-form">
             <div class="close"> 
-                <button class="close-btn" onclick="closeModel()"><i class="fa-solid fa-square-xmark js-X"></i></button>
+                <button class="close-btn close-modal" ><i class="fa-solid fa-square-xmark js-X"></i></button>
             </div>
             <h1>Chỉnh sửa thông tin sân</h1>
             <div class="form-group">

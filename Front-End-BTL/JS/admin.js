@@ -27,7 +27,7 @@ function renderBillToTable(bills){
             if(j==4) newCell1.appendChild(document.createTextNode(bill.dateOpen))
             if(j==5) newCell1.appendChild(document.createTextNode(getStatus(bill.status)))
             if(j==6) newCell1.innerHTML =   `
-            <button onclick="saveRowData(this,${bill.categoryId-1})" ><i class="fa-solid fa-trash-can"></i> </button>                                       `
+            <button onclick="saveRowData(this,${bill.categoryId-1})" ><i class="fa-solid fa-trash-can"></i> </button> `
         }
     })
 }
