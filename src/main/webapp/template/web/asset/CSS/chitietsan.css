@@ -1,0 +1,164 @@
+:root{
+    --tone1: #CDF0EA;
+    --tone2: #7895B2;
+}
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif ;
+    height: 100vh;
+    background-image: url(/Front-End-BTL/img/green-lawn-grass-pattern-texture-repeating-seamless-vector-image-garden-86084538.jpg);
+    background-size: 200px;
+}
+/*HEADER*/
+header {
+    background-color:none;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    align-items: center;
+    color: white;
+    background-color:#3B3486;
+}
+
+header .con1 #logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 5px;
+}
+
+.con1 {
+    height: 100%;
+    width: 30%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+.con1 #name {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.con2 {
+    height: 100%;
+    width: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.con2 ul {
+    height: 100%;
+    margin:0 20px 0 0;
+}
+
+.con2 ul li {
+    display: inline-block;
+    margin: 0 10px 0 10px;
+    font-size: large;
+    list-style: none;
+    font-weight: bold;
+    height: 100%;
+    line-height: 60px;
+    box-sizing: border-box;
+    padding :0 5px;
+}
+
+.con2 ul li a {
+    height: 100%;
+    text-decoration: none;
+    color: white;
+}
+.con2 li:hover {
+    cursor: pointer;
+    border-bottom: black solid 5px;
+
+}
+/*Middle*/
+.middle{
+    width: 100%;
+    height: auto;
+    margin: top 60px;;
+    background-color:rgba(4, 29, 37, 0.7) ;
+}
+.middle .tmp{
+    height: 60px;
+    width: 100%;
+}
+.middle .con {
+    height: 500px;
+    margin:  0px;
+    display: flex;
+}
+.middle .con .book{
+    width: 33.33%;
+    position: relative;
+    /* background-color:rgba(4, 29, 37, 0.7) ; */
+    color: white;
+    border: gray solid 1px;
+}
+.middle .con div[name="book"]:hover{
+    background-color: rgba(0,0,0,0.5);
+    border: white solid 2px;
+}
+.middle .con .book .image{
+    width: 90%;
+    height: 50%;
+    background-color: blue;
+    margin: 5% ;
+}
+.middle .con .book .image img{
+    height: 100%;
+    width: 100%;
+}
+.middle .con .book .price{
+    width: 100%;
+    height: 10%;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.middle .con .book h3{
+    text-align: center;
+}
+.middle .con .book .price span{
+    padding-left: 5px;
+}
+label{
+    margin-left: 5%;
+}
+select[name="days"]{
+    width: 25%;
+    word-spacing: 5px;
+}
+select[name="times"]{
+    width: 27%;
+}
+.middle .con .book button{
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    height: 10%;
+    cursor: pointer;
+}
+.middle .con .book button:active{
+    background-color: var(--tone1);
+    border: 5px white solid;
+    display:block;
+
+}
+.middle .con .book .bill{
+    position:absolute;
+    width: 90%;
+    height: 60%;
+    background-color: #CDF0EA;
+    top: 0%;
+    top: 5%;
+    left: 5%;
+}
