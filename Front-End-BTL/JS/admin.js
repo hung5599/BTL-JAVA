@@ -42,7 +42,6 @@ function saveRowData(r,x) {
         "dateOpen" : deletedMatch.cells[4].innerHTML
     }
     table[x].deleteRow(i)
-    console.log(result)
     return result;
 }
 function getStatus(i){

@@ -25,6 +25,7 @@ header {
     justify-content: space-between;
     padding-left: 10px;
     align-items: center;
+    position: relative;
 }
 
 header .con1 #logo {
@@ -85,6 +86,7 @@ header .con1 #logo {
 /*Table*/
 .content{
     position: relative;
+    padding-bottom: 50px;
 }
 .content .manage_table{
     width: 70%;
@@ -128,22 +130,25 @@ header .con1 #logo {
     margin-left: 2px;
     margin-right: 5px;
 }
+/* Add-box */
 .add-box{
     display: none;
     width: 20%;
-    height: 230px;
+    height: 300px;
     border: #3B3486 solid 2px;
     position: absolute;
-    top: 20%;
+    top: 10%;
     right: 6%;
 }
 .add-box .close {
     display: flex;
     justify-content: flex-end;
+    height: 7%;
 }
 .add-box .close .close-btn {
-    border: none;
     background-color: white;
+    border: none;
+    margin: 0;
 }
 .add-box .close .close-btn:hover {
     border: 1px black solid;
@@ -161,4 +166,51 @@ header .con1 #logo {
     left: 50%;
     transform:translateX(-50%);
     padding: 2px 5px;
+}
+/* Model */
+
+.open{
+    display: flex;
+}
+
+.model{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color:  rgba(0, 0, 0, 0.4);
+}
+.model .update-form{
+    width: 30%;
+    height: 200px;
+    background-color: aliceblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 25px;
+}
+.model .update-form .close {
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+}
+.model .update-form .close .close-btn {
+    height: 100%;
+}
+.model .update-form h1{
+    padding: 10px 0;
+    text-align: center;
+}
+.model .update-form input,label,button{
+    font-size: large;
+    margin: 10px 0;
+}
+.model .update-form .update{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 5px;
 }

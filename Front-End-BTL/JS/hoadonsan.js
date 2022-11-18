@@ -13,6 +13,18 @@ function getBill(){
             renderBillToTable(bills)
         })
 }
+function deleteBill(id){
+    var option =  {
+        method: 'DELETE',
+        headers: { 
+            'Content-Type': 'application/json' 
+        }
+    }
+    fetch(billAPI+'/'+id,option)
+        .then(function(response){
+            response.json()
+        })
+}
 function renderBillToTable(bills){
     var table = document.querySelector(".manage_table .table1")
     bills.map(function(bill){
@@ -24,14 +36,13 @@ function renderBillToTable(bills){
             if(j==2) newCell1.appendChild(document.createTextNode(bill.dateOpen))
             if(j==3) newCell1.appendChild(document.createTextNode(bill.time_start +" to " +  bill.time_end))
             if(j==4) newCell1.innerHTML =   `
-            <button onclick="saveRowData(this)" ><i class="fa-solid fa-trash-can"></i> </button>                                       `
+            <button onclick="saveRowData(this,${bill.id})" ><i class="fa-solid fa-trash-can"></i> </button>                                       `
         }
     })
 }
-function saveRowData(r) {
+function saveRowData(r,id) {
     var cf = confirm("Bạn có chắc chắn muốn hủy sân ? ")
     if(cf==true){
-        
         var i = r.parentNode.parentNode.rowIndex;
         table = document.querySelector(".table1");
         deletedMatch = table.rows.item(i)
@@ -43,8 +54,8 @@ function saveRowData(r) {
             "dateOpen" : deletedMatch.cells[2].innerHTML
         }
         table.deleteRow(i)
+        deleteBill(id)
         alert("Hủy sân đấu thành công !") 
-        console.log(result)
         return result;
     }
 }

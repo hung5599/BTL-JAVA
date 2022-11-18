@@ -1,48 +1,24 @@
 {
-    "Bills" :[
-        {
-            "id_san" : 1,
-            "categoryId" : 1, 
-            "id_user" :1 ,
-            "time_start" : "7pm",
-            "time_end" : "9pm",
-            "dateOpen" : "10/11/2022",
-            "status" : 1
-        },
-        {
-            "id_san" : 2,
-            "categoryId" : 2,
-            "id_user" :1 ,
-            "time_start" : "7pm",
-            "time_end" : "9pm",
-            "dateOpen" : "10/11/2022",
-            "status" : 1
-        },
-        {
-            "id_san" : 4,
-            "categoryId" : 3,
-            "id_user" :1 ,
-            "time_start" : "7pm",
-            "time_end" : "9pm",
-            "dateOpen" : "10/11/2022",
-            "status" : 1
-        },
-        {
-            "id_san" : 3,
-            "categoryId" : 1, 
-            "id_user" :1 ,
-            "time_start" : "7pm",
-            "time_end" : "9pm",
-            "dateOpen" : "14/11/2022",
-            "status" : 1
-        },{
-            "id_san" : 5,
-            "categoryId" : 1, 
-            "id_user" :1 ,
-            "time_start" : "7pm",
-            "time_end" : "9pm",
-            "dateOpen" : "12/11/2022",
-            "status" : 1
-        }
-    ]
+  "Bills": [
+    {
+      "id": 1,
+      "id_san": 1,
+      "categoryId": 1,
+      "id_user": 1,
+      "time_start": "7pm",
+      "time_end": "9pm",
+      "dateOpen": "10/11/2022",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "id_san": 2,
+      "categoryId": 2,
+      "id_user": 1,
+      "time_start": "7pm",
+      "time_end": "9pm",
+      "dateOpen": "10/11/2022",
+      "status": 1
+    }
+  ]
 }
