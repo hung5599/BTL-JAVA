@@ -71,7 +71,7 @@ header .con1 #logo {
     text-decoration: none;
     color: black;
 }
-.con2 ul li:last-child{
+.con2 ul li:nth-child(4){
     border-bottom: black solid 5px;
 }
 

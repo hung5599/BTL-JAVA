@@ -9,6 +9,7 @@ body{
     height: 100vh;
     overflow-x: hidden;
     background-size: 200px;
+    background:linear-gradient(180deg,var(--tone1),var(--tone2));
 }
 /*HEADER*/
 header {
@@ -20,7 +21,6 @@ header {
     padding-left: 10px;
     align-items: center;
     color: white;
-    background-color:#3B3486;
 }
 
 header .con1 #logo {
@@ -32,7 +32,7 @@ header .con1 #logo {
 .con1 {
     height: 100%;
     width: 30%;
-    color: white;
+    color: black;
     display: flex;
     align-items: center;
     justify-content:flex-start;
@@ -45,7 +45,7 @@ header .con1 #logo {
 .con2 {
     height: 100%;
     width: 50%;
-    color: white;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -71,7 +71,7 @@ header .con1 #logo {
 .con2 ul li a {
     height: 100%;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 .con2 li:hover {
     cursor: pointer;

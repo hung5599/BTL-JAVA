@@ -5,9 +5,9 @@
       "id_san": 1,
       "categoryId": 1,
       "id_user": 1,
-      "time_start": "7pm",
-      "time_end": "9pm",
+      "time": "7pm to 9pm",
       "dateOpen": "10/11/2022",
+      "price" :250,
       "status": 1
     },
     {
@@ -15,9 +15,9 @@
       "id_san": 2,
       "categoryId": 2,
       "id_user": 1,
-      "time_start": "7pm",
-      "time_end": "9pm",
+      "time": "7pm to 9pm",
       "dateOpen": "10/11/2022",
+      "price" :250,
       "status": 1
     }
   ]

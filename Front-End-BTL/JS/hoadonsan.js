@@ -17,13 +17,14 @@ function renderBillToTable(bills){
     var table = document.querySelector(".manage_table .table1")
     bills.map(function(bill){
         var row = table.insertRow(1)
-        for(var j=0;j<5;j++){
+        for(var j=0;j<6;j++){
             var newCell1 = row.insertCell(j)
             if(j==0) newCell1.appendChild(document.createTextNode(bill.id_san))
             if(j==1) newCell1.appendChild(document.createTextNode(exchangeCategoryId(bill.categoryId)))
             if(j==2) newCell1.appendChild(document.createTextNode(bill.dateOpen))
-            if(j==3) newCell1.appendChild(document.createTextNode(bill.time_start +" to " +  bill.time_end))
-            if(j==4) newCell1.innerHTML =   `
+            if(j==3) newCell1.appendChild(document.createTextNode(bill.time))
+            if(j==4) newCell1.appendChild(document.createTextNode(bill.price))
+            if(j==5) newCell1.innerHTML =   `
             <button onclick="saveRowData(this,${bill.id})" ><i class="fa-solid fa-trash-can"></i> </button>                                       `
         }
     })
@@ -39,6 +40,7 @@ function saveRowData(r,id) {
             "user_name" : document.querySelector('.content .manage_table h3 span').innerHTML,
             "categoryId" : reExchangeCategoryId(deletedMatch.cells[1].innerHTML),
             "time" : deletedMatch.cells[3].innerHTML,
+            "price": deletedMatch.cells[4].innerHTML,
             "dateOpen" : deletedMatch.cells[2].innerHTML
         }
         table.deleteRow(i)

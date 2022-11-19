@@ -1,5 +1,5 @@
 :root{
-    --tone1: #CDF0EA;
+    --tone1: #3B3486;
     --tone2: #7895B2;
 }
 body{
@@ -21,6 +21,8 @@ header {
     align-items: center;
     color: white;
     background-color:#3B3486;
+    position: fixed;
+    z-index: 10;
 }
 
 header .con1 #logo {
