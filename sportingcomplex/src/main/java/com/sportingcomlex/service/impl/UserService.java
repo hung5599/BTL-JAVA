@@ -15,4 +15,26 @@ public class UserService implements IUserService{
 		return userDAO.findByUserNameAndPassword(userName, passWord);
 	}
 
+	@Override
+	public UserModel update(UserModel updateUser) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void delete(Long[] ids) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public UserModel findByUserName(String userName) {
+		return userDAO.findByUserName(userName);
+	}
+
+	@Override
+	public UserModel save(UserModel userModel) {
+		Long userId = userDAO.save(userModel);
+		return userDAO.findOne(userId);
+	}
+
 }

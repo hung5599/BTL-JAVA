@@ -9,7 +9,6 @@
 <title>Đăng nhập</title>
 </head>
 <body>
-
  <div class="container">
      <div id="login-row" class="row justify-content-center align-items-center">
          <div id="login-column" class="col-md-6">
@@ -34,12 +33,13 @@
                      	
                      </div>
                      <div id="register-link" class="text-right">
-                         <a href="#" class="text-info">Register here</a>
+                         <a href="<c:url value = '/sign-up'/>" class="text-info">Đăng ký tại đây</a>
                      </div>
                  </form>
              </div>
          </div>
      </div>
  </div>
+
 </body>
 </html>

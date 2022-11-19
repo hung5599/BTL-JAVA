@@ -1,6 +1,6 @@
 package com.sportingcomplex.dao;
 
-import java.util.*;
+import java.util.List;
 
 import com.sportingcomlex.mapper.RowMapper;
 public interface GenericDAO<T> {

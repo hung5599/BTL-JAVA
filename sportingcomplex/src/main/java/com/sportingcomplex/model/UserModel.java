@@ -8,6 +8,13 @@ public class UserModel {
 	private String fullName;
 	private String passWord;
 	private String address;
+	private String phoneNumber;
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
 	private Long roleId;
 	private String gender;
 	private Timestamp dateOfBrth;

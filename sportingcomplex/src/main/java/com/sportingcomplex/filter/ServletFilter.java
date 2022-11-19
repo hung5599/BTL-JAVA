@@ -31,7 +31,7 @@ public class ServletFilter implements Filter{
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String url = request.getRequestURI();
         if (url.contains("/admin")) {
-            UserModel model = (UserModel) SessionUtil.getInstance().getValue(request, "user");
+            UserModel model = (UserModel) SessionUtil.getInstance().getValue(request, "usermod");
             if (model != null) {
                 if (model.getRole().getCode().equals(SystemConstant.ADMIN)) {
                     filterChain.doFilter(servletRequest, servletResponse);
