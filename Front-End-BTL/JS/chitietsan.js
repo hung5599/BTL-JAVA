@@ -25,7 +25,7 @@ function createBooking(data){
         }
     fetch(bookingAPI,option)
         .then(function(response){
-            response.json()
+            return response.json()
         })
 }
 function getBtnId(){
@@ -38,7 +38,7 @@ function getBtnId(){
             var time = select1.options[select1.selectedIndex].text
             var select2 = document.querySelectorAll('.book #days')[i]
             var day = select2.options[select2.selectedIndex].text
-            var user = document.querySelectorAll(".con2 ul li a ")[3].text
+            var user = document.querySelectorAll(".con2 ul li a ")[4].text
 
             var Object = {
                 "categoryId" : parseInt(getCategoryId(san.split(" ")[0])),
@@ -48,8 +48,18 @@ function getBtnId(){
                 "time" : time,
                 "dateOpen" : day
             }   
-            createBooking(Object)
-            alert("Đặt sân thành công !") 
+            postData(bookingAPI, Object)
+                .then((data) => {
+                    console.log(data); //
+                    if(data != null) {
+                        console.log("dung r ")
+                    }
+                    else {
+                        console.log("saiiiiii ")
+                    }
+
+                });
+            // alert("Đặt sân thành công !") 
         }
     } 
     // console.log(Object)
@@ -59,4 +69,18 @@ function getCategoryId(x){
     else if(x=="SCL") return 2;
     else return 3;
 } 
-
+async function postData(url, data) {
+    const response = await fetch(url, {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data) 
+    });
+    return response.json();
+  }
+  
+// postData('http://localhost:3000/Booking', { answer: 42 })
+//     .then((data) => {
+//       console.log(data); //
+//     });
