@@ -13,18 +13,6 @@ function getBill(){
             renderBillToTable(bills)
         })
 }
-function deleteBill(id){
-    var option =  {
-        method: 'DELETE',
-        headers: { 
-            'Content-Type': 'application/json' 
-        }
-    }
-    fetch(billAPI+'/'+id,option)
-        .then(function(response){
-            response.json()
-        })
-}
 function renderBillToTable(bills){
     var table = document.querySelector(".manage_table .table1")
     bills.map(function(bill){
@@ -54,7 +42,6 @@ function saveRowData(r,id) {
             "dateOpen" : deletedMatch.cells[2].innerHTML
         }
         table.deleteRow(i)
-        deleteBill(id)
         alert("Hủy sân đấu thành công !") 
         return result;
     }

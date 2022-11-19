@@ -1,3 +1,8 @@
+//Function setOnlcik
+function setOnlcik(){
+    var x = document.getElementById("btn-success")
+    x.addEventListener("click",getUsernameAndPassword)
+}
 var accAPI = 'http://localhost:3000/accounts'
 //Function
 function postData(data){

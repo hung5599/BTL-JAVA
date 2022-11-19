@@ -1,19 +1,9 @@
-//DOM-CSS
-function setLbColor(label){
-    var labels = document.getElementsByTagName('label')
-    for(var i =0;i<labels.length;i++){
-        labels[i].style.color = "white"
-    }
-    var h1Element = document.getElementById(label)
-    Object.assign(h1Element.style,{
-        color:'gold',
-        transition :'1s'
-    })
-}
+//DOM-CS
 // Write value of input to JSON file
 var userAPI = "http://localhost:8080/sportingcomplex/api-admin-ground"
 function main(){
     handleCreateUser()
+
 }
 main()
 //Function

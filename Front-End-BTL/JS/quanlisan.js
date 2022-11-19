@@ -76,7 +76,7 @@ function deleteSan(id,callback){
 //FETCH PATCH
 function updateSan(data,id){
     var option={
-        method: "PATCH",
+        method: "PUT",
         headers: { 
             'Content-Type': 'application/json' 
         },
@@ -103,7 +103,7 @@ function addNewSanToTable(table,san){
             if(j==2) newCell1.appendChild(document.createTextNode(getStatus(san.status)))
             if(j==3) newCell1.innerHTML =   `
             <button class="btn" onclick="deleteSan(${san.id},saveRowData(this,${san.categoryId-1}))" ><i class="fa-solid fa-trash-can"></i> Xóa </button>
-            <button class="btn fix-btn" onclick="handleUpdateSan(${san.id},${san.categoryId})" ><i class="fa-solid fa-pen-to-square"></i> Chỉnh thông tin sân </button> 
+            <button class="btn fix-btn" onclick="handleUpdateSan(${san.id},${san.categoryId},${san.price})" ><i class="fa-solid fa-pen-to-square"></i> Chỉnh thông tin sân </button> 
                                                    `
         }
 }
@@ -142,10 +142,11 @@ function renderNewSanToTable(){
         postSan(tmp)
     }
 }
-function handleUpdateSan(id,categoryId){
+function handleUpdateSan(id,categoryId,price){
     var x = document.querySelector(".modal")
     x.style.display ="block"
     var y= document.querySelector(".modal .update-form .update")
+    document.querySelector('.modal .update-form .form-group input[name="newPrice"]').value = price.toString()
     y.addEventListener("click",function(){
         var newPrice = parseInt(document.querySelector('.modal .update-form .form-group input[name="newPrice"]').value)
         var select2 = document.getElementById("newStatus")

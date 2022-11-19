@@ -30,7 +30,6 @@ function createBooking(data){
 }
 function getBtnId(){
     var x = document.querySelectorAll(".middle .con .book button")
-    console.log(x)
     for(let i=0;i<x.length;i++){
         x[i].onclick  = function(){
             var san = document.querySelectorAll('.book h3')[i].textContent
@@ -49,7 +48,6 @@ function getBtnId(){
                 "time" : time,
                 "dateOpen" : day
             }   
-            console.log(Object)
             createBooking(Object)
             alert("Đặt sân thành công !") 
         }
