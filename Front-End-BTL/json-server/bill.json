@@ -6,7 +6,7 @@
       "categoryId": 1,
       "id_user": 1,
       "time": "7pm to 9pm",
-      "dateOpen": "10/11/2022",
+      "dateOpen": "21/11/2022",
       "price" :250,
       "status": 1
     },
@@ -16,7 +16,7 @@
       "categoryId": 2,
       "id_user": 1,
       "time": "7pm to 9pm",
-      "dateOpen": "10/11/2022",
+      "dateOpen": "22/11/2022",
       "price" :250,
       "status": 1
     }

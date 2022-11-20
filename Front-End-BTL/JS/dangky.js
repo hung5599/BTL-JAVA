@@ -3,6 +3,7 @@ function setOnlcik(){
     var x = document.getElementById("btn-success")
     x.addEventListener("click",getUsernameAndPassword)
 }
+setOnlcik()
 var accAPI = 'http://localhost:3000/accounts'
 //Function
 function postData(data){
@@ -23,12 +24,16 @@ function getUsernameAndPassword(){
     var user_name = x[0].value
     var password1 = x[1].value.toString()
     var password2 = x[2].value.toString()
-    if(password1!=password2) alert("Mật khẩu xác nhận không trùng khớp")
+    var check = document.getElementById("confirm")
+    if(!check.checked) alert("Bạn chưa đồng ý với các điều khoản của chúng tôi")
     else{
-        var Object ={
-            "user_name" : user_name,
-            "password" : password1
+        if(password1!=password2) alert("Mật khẩu xác nhận không trùng khớp")
+        else{
+            var Object ={
+                "user_name" : user_name,
+                "password" : password1
+            }
+            postData(Object)
         }
-        postData(Object)
-    }
+    }   
 }

@@ -18,15 +18,14 @@ function renderBillToTable(bills){
     var table = document.querySelectorAll(".manage_table .table1")
     bills.map(function(bill){
         var row = table[bill.categoryId-1].insertRow(1)
-        for(var j=0;j<7;j++){
+        for(var j=0;j<6;j++){
             var newCell1 = row.insertCell(j)
             if(j==0) newCell1.appendChild(document.createTextNode(bill.id_san))
             if(j==1) newCell1.appendChild(document.createTextNode(bill.id_user))
-            if(j==2) newCell1.appendChild(document.createTextNode(bill.time_start))
-            if(j==3) newCell1.appendChild(document.createTextNode(bill.time_end))
-            if(j==4) newCell1.appendChild(document.createTextNode(bill.dateOpen))
-            if(j==5) newCell1.appendChild(document.createTextNode(getStatus(bill.status)))
-            if(j==6) newCell1.innerHTML =   `
+            if(j==2) newCell1.appendChild(document.createTextNode(bill.time))
+            if(j==3) newCell1.appendChild(document.createTextNode(bill.dateOpen))
+            if(j==4) newCell1.appendChild(document.createTextNode(getStatus(bill.status)))
+            if(j==5) newCell1.innerHTML =   `
             <button  onclick="saveRowData(this,${bill.categoryId-1})" ><i class="fa-solid fa-trash-can"></i> </button> `
         }
     })
