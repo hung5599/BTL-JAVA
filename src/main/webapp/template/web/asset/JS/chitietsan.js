@@ -30,9 +30,11 @@ function createBooking(data){
                 function(value) {
                     if(value == "{}") {
                         alert("Đặt sân thất bại")
+                        console.log(value)
                     }
                     else {
                         alert("Đặt sân thành công")
+                        console.log(value)
                     }
                 }
             )

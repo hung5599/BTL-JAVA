@@ -16,6 +16,8 @@ public class MatchService implements IMatchservice{
 
 	@Inject
 	private IMatchDAO matchDao;
+	@Inject
+	private IBillDAO billDao;
 	
 	// them trận đấu vào database
 	@Override
@@ -26,30 +28,9 @@ public class MatchService implements IMatchservice{
 		// TH1: trận đấu chưa có
 		if(match == null) {
 			matchModel.setStatus(true);
-//			 lưu trận đấu 
+//			 luu tran dau 
 			Long id = matchDao.save(matchModel);
 			return matchDao.findOneById(id);
-		}
-		
-		// TH tran dau co trong Database roi nhung da bi huy
-		else if(match.isStatus() == false) {
-			// userName moi cua tk moi ddang thuc thi viec dat tran moi
-			String userNameNew = matchModel.getUserName();
-			// userName cu cua user da tung dat tran dau va huy
-			String userNameOld = match.getUserName();
-			
-			// TH tran dau dang dat la cua cung 1 nguoi
-			if(userNameNew.equals(userNameOld)) {
-				matchDao.updateById(true, match.getId());
-				match.setStatus(true);
-				return match;
-			}
-			// TH tran dau moi la cua user khac
-			else {
-				matchModel.setStatus(true);
-				Long id = matchDao.save(matchModel);
-				return matchDao.findOneById(id);
-			}
 		}
 		return null;
 	}
@@ -61,21 +42,16 @@ public class MatchService implements IMatchservice{
 		return null;
 	}
 
-	// liet ke danh sach tran dau da duoc dat(cho admin)
+	// liet ke danh sach cac tran dau 
 	@Override
-	public List<MatchModel> findAllByStatus(Boolean Status) {
-		return matchDao.findAllByStatus(Status);
-	}
-
-	// liet ke danh sach các trận đấu (cho user)
-	@Override
-	public List<MatchModel> findAllByUserName(UserModel user) {
-		return matchDao.findAllByUserName(user.getUserName());
+	public List<MatchModel> findAllByUserName() {
+		return matchDao.findAllByUserName();
 	}
 
 	// huy tran dau (cua user)
 	@Override
 	public void update(MatchModel matchModel) {
-		matchDao.update(false, matchModel.getTime_Start(), matchModel.getCategoryId(), matchModel.getDateOpen(), matchModel.getId_San());
+		billDao.delete(matchModel.getId());
+		matchDao.updateById(matchModel.getId());
 	}
 }

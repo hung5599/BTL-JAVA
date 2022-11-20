@@ -38,8 +38,8 @@ public class MatchAPI extends HttpServlet{
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
 		// map sang user để get ra ten và tra id_user
-		UserModel user = HttpUtil.of(request.getReader()).toModel(UserModel.class);
-		List<MatchModel> list = matchService.findAllByUserName(user);
+//		UserModel user = HttpUtil.of(request.getReader()).toModel(UserModel.class);
+		List<MatchModel> list = matchService.findAllByUserName();
 		mapper.writeValue(response.getOutputStream(), list);
 	}
 	
@@ -70,6 +70,6 @@ public class MatchAPI extends HttpServlet{
 		// id_san, time, date, categoryId, 
 		MatchModel match = HttpUtil.of(request.getReader()).toModel(MatchModel.class);
 		matchService.update(match);
-		mapper.writeValue(response.getOutputStream(), "{title: Hủy sân thành công}");
+		mapper.writeValue(response.getOutputStream(), "{}");
 	}
 }

@@ -44,40 +44,19 @@ public class MatchDAO extends AbstractDAO<MatchModel> implements IMatchDAO{
 		String sql = "delete from match where id_san = ? and time = ? and date_open = ? and categoryid = ?";
 		update(sql, id_san, time_Start, dateOpen, ccategoryId);
 	}
-
-	// liệt kê tất cả các trận đấu đc đăng kí cho admin
-	@Override
-	public List<MatchModel> findAllByStatus(Boolean status) {
-		String sql = "select * from match where status = 1";
-		List<MatchModel> listMatch = query(sql, new MatchMapper());
-		if(listMatch.isEmpty()) {
-			return null;
-		}
-		return listMatch;
-	}
 	
 	// liet ke danh sach cac tran dau cuar userName (cho user)
 	@Override
-	public List<MatchModel> findAllByUserName(String userName) {
-		String sql = "select * from match where username = ? and status = 1";
-		List<MatchModel> list = query(sql, new MatchMapper(), userName);
+	public List<MatchModel> findAllByUserName() {
+		String sql = "select * from match where status = 1";
+		List<MatchModel> list = query(sql, new MatchMapper());
 		return list.isEmpty() ? null : list;
-	}
-
-	// huy tran dau 
-	@Override
-	public void update(Boolean status, String time, Long categoryId, Date date, Long id_san) {
-		String sql = "update match set status = ? where time = ? and id_san = ? and categoryid = ? and date_open = ?";
-		update(sql, status, time, id_san, categoryId, date);
 	}
 
 	// update lai trang thai khi dat lai tran dau do 
 	@Override
-	public void updateById(Boolean status, Long id) {
-		String sql = "update match set status = ? where id = ?";
-		update(sql, status, id);
+	public void updateById(Long id) {
+		String sql = "delete from match where id = ?";
+		update(sql, id);
 	}
-	
-	
-	
 }

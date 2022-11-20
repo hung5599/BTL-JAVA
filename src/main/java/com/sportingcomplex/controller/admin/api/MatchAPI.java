@@ -32,7 +32,7 @@ public class MatchAPI extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
-		List<MatchModel> list = matchService.findAllByStatus(true);
+		List<MatchModel> list = matchService.findAllByUserName();
 		mapper.writeValue(response.getOutputStream(), list);
 	}
 	
