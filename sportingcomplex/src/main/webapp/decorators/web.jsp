@@ -5,8 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
 	<title><dec:title default="Trang chủ" /></title>
+	
 	<!-- Css -->
 	<link href="<c:url value = '/template/web/asset/CSS/main.css' />" rel = "stylesheet" type = "text/css" media="all" />
 	<link href="<c:url value = '/template/web/asset/font/fontawesome-free-6.1.2-web/css/all.css'/>" rel = "stylesheet" type = "text/css" media="all" />
@@ -15,13 +16,24 @@
 				500,500i,700,700i|Roboto+Slab|Saira'/>" rel = "stylesheet" type = "text/css" media="all" />
 	<link href = "<c:url value = 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css'/>"rel = "stylesheet" type = "text/css" media="all" />
 	
+	
+	<!-- <link rel="stylesheet" href="<c:url value = '/template/web/asset/CSS/chitietsan.css' />">
+	<link rel="stylesheet" href="<c:url value = '/template/web/asset/CSS/datsan.css' />" >
+	<link rel="stylesheet" href="<c:url value = '/template/web/asset/CSS/thanhtoan.css' />"> -->
+	
 </head>
 <body>
 
+	<!-- Header -->
 	<%@include file = "/common/web/header.jsp" %>
+	<!-- End header -->
+	
+	<!-- container -->
 	<dec:body />
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" > </script>
+	<!-- End container -->
+	
+	
+	<!-- webapp\template\web\asset\JS -->
 	<script type="text/javascript" src = "<c:url value = '/template/web/asset/JS/main.js' />"></script>
-
 </body>
 </html>

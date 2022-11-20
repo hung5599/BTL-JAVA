@@ -1,14 +1,16 @@
 package com.sportingcomplex.model;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
-public class MatchModel {
-	private Long id;;
-	private Long id_San;;
-	private Timestamp time_Start;
-	private Timestamp time_End;
+public class MatchModel{
+	private Long id;
+	private Long categoryId;
+	private Long id_San;
+	private Float price;
+	private String time_Start;
+	private String userName;
 	private boolean status;
-	private Timestamp dateOpen;
+	private Date dateOpen;
 	public Long getId() {
 		return id;
 	}
@@ -21,30 +23,42 @@ public class MatchModel {
 	public void setId_San(Long id_San) {
 		this.id_San = id_San;
 	}
-	public Timestamp getTime_Start() {
-		return time_Start;
-	}
-	public void setTime_Start(Timestamp time_Start) {
-		this.time_Start = time_Start;
-	}
-	public Timestamp getTime_End() {
-		return time_End;
-	}
-	public void setTime_End(Timestamp time_End) {
-		this.time_End = time_End;
-	}
+
 	public boolean isStatus() {
 		return status;
 	}
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	public Timestamp getDateOpen() {
+	public Date getDateOpen() {
 		return dateOpen;
 	}
-	public void setDateOpen(Timestamp dateOpen) {
+	public void setDateOpen(Date dateOpen) {
 		this.dateOpen = dateOpen;
 	}
-	
+	public String getTime_Start() {
+		return time_Start;
+	}
+	public void setTime_Start(String time_Start) {
+		this.time_Start = time_Start;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public Long getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
+	}
+	public Float getPrice() {
+		return price;
+	}
+	public void setPrice(Float price) {
+		this.price = price;
+	}
 	
 }

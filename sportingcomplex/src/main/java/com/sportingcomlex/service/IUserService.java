@@ -7,5 +7,4 @@ public interface IUserService {
 	UserModel findByUserName(String userName);
 	UserModel save(UserModel userModel);
 	UserModel update(UserModel updateUser);
-	void delete(Long[] ids);
 }

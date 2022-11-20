@@ -1,25 +1,18 @@
 package com.sportingcomplex.model;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 public class UserModel {
 	private Long id;
 	private String userName;
-	private String fullName;
 	private String passWord;
+	private String fullName;
 	private String address;
-	private String phoneNumber;
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
+	private String phonenumber;
 	private Long roleId;
-	private String gender;
-	private Timestamp dateOfBrth;
-	private RoleModel role = new RoleModel();
-	
+	private Date date_of_birth;
+	private Integer status;
+	private RoleModel role;
 	public RoleModel getRole() {
 		return role;
 	}
@@ -31,19 +24,6 @@ public class UserModel {
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-	
-	public String getFullName() {
-		return fullName;
-	}
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
 	}
 	public String getUserName() {
 		return userName;
@@ -57,11 +37,23 @@ public class UserModel {
 	public void setPassWord(String passWord) {
 		this.passWord = passWord;
 	}
+	public String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String getPhonenumber() {
+		return phonenumber;
+	}
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
 	}
 	public Long getRoleId() {
 		return roleId;
@@ -69,11 +61,17 @@ public class UserModel {
 	public void setRoleId(Long roleId) {
 		this.roleId = roleId;
 	}
-	public Timestamp getDateOfBrth() {
-		return dateOfBrth;
+	public Date getDate_of_birth() {
+		return date_of_birth;
 	}
-	public void setDateOfBrth(Timestamp dateOfBrth) {
-		this.dateOfBrth = dateOfBrth;
+	public void setDate_of_birth(Date date_of_birth) {
+		this.date_of_birth = date_of_birth;
+	}
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 	
 	

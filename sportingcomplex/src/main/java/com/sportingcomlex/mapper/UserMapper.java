@@ -6,33 +6,34 @@ import java.sql.SQLException;
 import com.sportingcomplex.model.RoleModel;
 import com.sportingcomplex.model.UserModel;
 
-	public class UserMapper implements RowMapper<UserModel>{
+public class UserMapper implements RowMapper<UserModel>{
 
-		@Override
-		public UserModel mapRow(ResultSet resultset) {
-			try {
-				UserModel user = new UserModel();
-				user.setId(resultset.getLong("id"));
-				user.setUserName(resultset.getString("username"));
-				user.setFullName(resultset.getString("fullname"));
-				user.setPassWord(resultset.getString("password"));
-				user.setRoleId(resultset.getLong("roleid"));
-//				try{
-////					user.setAddress(resultset.getString("Adress"));
-////					user.setPhoneNumber(resultset.getString("PhoneNum"));
-////					user.setDateOfBrth(resultset.getTimestamp("DOB"));
-//				}catch(Exception e){
-//					System.out.print(e.getMessage());
-//				}
-				try {
-					RoleModel role = new RoleModel();
-					role.setCode(resultset.getString("code"));
-					role.setName(resultset.getString("name"));
+	@Override
+	public UserModel mapRow(ResultSet resultset) {
+		try {
+			UserModel user = new UserModel();
+			user.setId(resultset.getLong("id"));
+			user.setUserName(resultset.getString("username"));
+			user.setFullName(resultset.getString("fullname"));
+			user.setPassWord(resultset.getString("password"));
+			user.setRoleId(resultset.getLong("roleid"));
+			user.setStatus(resultset.getInt("status"));
+			try{
+				user.setAddress(resultset.getString("Adress"));
+				user.setPhonenumber(resultset.getString("phonenumber"));
+				user.setDate_of_birth(resultset.getDate("dob"));
+			}catch(Exception e){
+				System.out.print(e.getMessage());
+			}
+		try {
+			RoleModel role = new RoleModel();
+			role.setCode(resultset.getString("code"));
+			role.setName(resultset.getString("name"));
 					user.setRole(role);
-				}catch (Exception e){
-					System.out.print(e.getMessage());
-				}
-				return user;
+			}catch (Exception e){
+				System.out.print(e.getMessage());
+			}
+			return user;
 			} catch(SQLException e) {
 				return null;
 		}

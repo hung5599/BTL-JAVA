@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sportingcomlex.service.IUserService;
 import com.sportingcomplex.model.UserModel;
 import com.sportingcomplex.utils.FormUtil;
+import com.sportingcomplex.utils.HttpUtil;
 
 @WebServlet(urlPatterns = {"/sign-up"})
 public class SignUpController extends HttpServlet{
@@ -40,18 +41,19 @@ public class SignUpController extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserModel model = FormUtil.toModel(UserModel.class,request);
-		model = userService.findByUserName(model.getUserName());
-		if(model!=null) {
+		UserModel model1 = userService.findByUserName(model.getUserName());
+		if(model1!=null) {
 			response.sendRedirect(request.getContextPath()+"/sign-up?mess=taikhoandatontai&alert=danger");
 		}
 		else {
-			String pass = request.getParameter("passWord");
 			String repass = request.getParameter("repassWord");
-			if(!pass.equals(repass)) {
+			if(!model.getPassWord().equals(repass)) {
 				response.sendRedirect(request.getContextPath()+"/sign-up?mess=xacnhanmatkhaukhongdung&alert=danger");
 			}
-			else
+			else {
+				model = userService.save(model);
 				response.sendRedirect(request.getContextPath()+"/log-in?action=login&mess=dangkythanhcong&alert=primary");
+			}
 		}
 	}
 }

@@ -16,22 +16,25 @@ import java.util.*;
 
 public class SportGroundDAO extends AbstractDAO<SportGroundModel> implements ISportGroundDAO{
 
+	// liệt kê các sân theo thể loại
 	@Override
 	public List<SportGroundModel> findGroundBycategoryId(Long categoryId) {
-		String sql = "select * from Sân1 where categoryid = ?";
+		String sql = "select * from san where categoryid = ?";
 		return query(sql, new SportGroundMapper(), categoryId);
 	}
 
+	// lưu thêm sân vào database
 	@Override
 	public Long save(SportGroundModel groundModel) {
-		String sql = "insert into Sân1(categoryid, name, Date_open, Price, Status)\n"
-					+ "values(?, ?, ?, ?, ?)";
-		return insert(sql, groundModel.getCategoryId(), groundModel.getName(), groundModel.getDateOpen(), groundModel.getPrice(), groundModel.isStatus());
+		String sql = "insert into san(categoryid, price, status)\n"
+					+ "values(?, ?, ?)";
+		return insert(sql, groundModel.getCategoryId(), groundModel.getPrice(), groundModel.isStatus());
 	}
 
+	// tìm kiếm 1 sân theo id sân
 	@Override
 	public SportGroundModel findOne(Long id) {
-		String sql = "select * from Sân1 where id = ?";
+		String sql = "select * from san where id = ?";
 		List<SportGroundModel>  groundList = query(sql, new SportGroundMapper(), id);
 		if(groundList.isEmpty()) {
 			return null;
@@ -39,16 +42,18 @@ public class SportGroundDAO extends AbstractDAO<SportGroundModel> implements ISp
 		return groundList.get(0);
 	}
 
+	// cập nhật lại các thuộc tính của sân 
 	@Override
 	public void update(SportGroundModel upDateGround) {
-		String sql = "update Sân1 set categoryid = ?, name = ?,\n"
-				+ "Date_open = ?, Price = ?, Status = ? where id = ?";
-		update(sql, upDateGround.getCategoryId(), upDateGround.getName(), upDateGround.getPrice(), upDateGround.isStatus(), upDateGround.getId());
+		String sql = "update san set categoryid = ?,\n"
+				+ " price = ?, status = ? where id = ?";
+		update(sql, upDateGround.getCategoryId(), upDateGround.getPrice(), upDateGround.isStatus(), upDateGround.getId());
 	}
 
+	// xóa sân theo id
 	@Override
 	public void delete(Long id) {
-		String sql = "delete from Sân1 where id = ?";
+		String sql = "delete from san where id = ?";
 		update(sql, id);
 	}
 }

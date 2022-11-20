@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ include file="/common/taglib.jsp"%>
+<%@ include file="/common/taglib.jsp"%>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanh toan</title>
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Itim|Lobster|Montserrat:500|Noto+Serif|Nunito|Patrick+Hand|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab|Saira" rel="stylesheet">
-    <link rel="stylesheet" href="<c:url value = '/template/web/asset/CSS/thanhtoan.css' />">
 </head>
 <body>
     <div class="center">
@@ -26,7 +24,8 @@
                 <li>Sau khi thanh toán người dùng chụp lại màn hình rồi up file ảnh bên dưới</li>
             </ul>
         </div>
-        <img id="img2" src="/img/qr.png" alt="">
+        <!-- <img id="img2" src="/Front-End-BTL/img/qr.png" alt=""> -->
+        <img id="img2" src="<c:url value = 'template/web/asset/img/qr.png'/>" alt="">
         <div class="input-file">
             <label for="">
                 <input type="file" title="Chọn file ảnh">
@@ -36,8 +35,11 @@
         </div>
     </div>
     <div class="backimg">
-        <img id="img1" src="/img/Sports.png" alt="">
-        <img id ="img3" src="/img/Sports.png" alt="">
+        <!--./asset/img/Sports.png-->
+        <!--/template/web/asset/img/Sports.png-->
+        <img id="img1" src="<c:url value = '/template/web/asset/img/Sports.png'/>" alt="">
+        <img id="img3" src="<c:url value = '/template/web/asset/img/Sports.png'/>" alt="">
     </div> 
+</body>
 </body>
 </html>

@@ -1,6 +1,15 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/sportingcomlex/service/impl/BillService.java=UTF-8
+encoding//src/main/java/com/sportingcomlex/service/impl/MatchService.java=UTF-8
+encoding//src/main/java/com/sportingcomlex/service/impl/SportGroundService.java=UTF-8
+encoding//src/main/java/com/sportingcomplex/controller/admin/api/MatchAPI.java=UTF-8
+encoding//src/main/java/com/sportingcomplex/controller/admin/api/SportGroundAPI.java=UTF-8
+encoding//src/main/java/com/sportingcomplex/controller/admin/api/UserAPI.java=UTF-8
 encoding//src/main/java/com/sportingcomplex/controller/web/HomeController.java=UTF-8
 encoding//src/main/java/com/sportingcomplex/controller/web/LoginController.java=UTF-8
 encoding//src/main/java/com/sportingcomplex/controller/web/SignUpController.java=UTF-8
+encoding//src/main/java/com/sportingcomplex/controller/web/api/MatchAPI.java=UTF-8
 encoding//src/main/java/com/sportingcomplex/dao/impl/AbstractDAO.java=UTF-8
-encoding//src/main/webapp/common/web/header.jsp=UTF-8
+encoding//src/main/java/com/sportingcomplex/dao/impl/BillDAO.java=UTF-8
+encoding//src/main/java/com/sportingcomplex/dao/impl/MatchDAO.java=UTF-8
+encoding//src/main/java/com/sportingcomplex/dao/impl/SportGroundDAO.java=UTF-8

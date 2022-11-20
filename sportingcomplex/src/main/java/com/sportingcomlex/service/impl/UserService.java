@@ -20,11 +20,7 @@ public class UserService implements IUserService{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
-	public void delete(Long[] ids) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	@Override
 	public UserModel findByUserName(String userName) {

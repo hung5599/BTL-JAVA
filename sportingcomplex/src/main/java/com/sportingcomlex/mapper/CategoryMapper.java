@@ -20,5 +20,4 @@ public class CategoryMapper implements RowMapper<CategoryModel>{
 			return null;
 		}
 	}
-	
 }
