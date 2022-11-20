@@ -1,9 +1,14 @@
 //Fetch API
+function setOnlcik(){
+    var x = document.querySelector(".btn .update")
+    x.addEventListener("click",update)
+}
 var billAPI= 'http://localhost:3000/Bills'
 function main(){
     getBill()
 }
 main()
+setOnlcik()
 //Function
 function getBill(){
     fetch(billAPI)
@@ -46,4 +51,20 @@ function saveRowData(r,x) {
 function getStatus(i){
     if(i==1) return "Đã được đặt"
     else return "Đã hủy"
+}
+function update(){
+    removeRow()
+    getBill()
+}
+function removeRow(){
+    var x = document.querySelectorAll(".table1")
+    console.log(x)
+    x.forEach(function(table){
+        var tableRows = table.getElementsByTagName('tr');
+        console.log(tableRows)
+        var rowCount = tableRows.length;
+        for (let i=rowCount-1; i>0; i--) {
+            table.deleteRow(i);
+        }
+    })
 }
