@@ -5,8 +5,10 @@ import java.util.List;
 import javax.inject.Inject;
 
 import com.sportingcomlex.service.IMatchservice;
+import com.sportingcomplex.dao.IBillDAO;
 import com.sportingcomplex.dao.IMatchDAO;
 import com.sportingcomplex.dao.IUserDAO;
+import com.sportingcomplex.model.BillModel;
 import com.sportingcomplex.model.MatchModel;
 import com.sportingcomplex.model.UserModel;
 
@@ -14,53 +16,37 @@ public class MatchService implements IMatchservice{
 
 	@Inject
 	private IMatchDAO matchDao;
-	@Inject
-	private IUserDAO userDao;
 	
-	private void setType(MatchModel matchModel) {
-		Long categoryId = matchModel.getCategoryId();
-		if(categoryId == 1) {
-			matchModel.setType("Bong Da");
-		}
-		else if(categoryId == 2) {
-			matchModel.setType("Cau Long");
-		}
-		else matchModel.setType("Tennis");
-	}
-	 
-	// them
+	// them trận đấu vào database
 	@Override
-	public MatchModel save(MatchModel matchModel) {	
-		// tìm trận đấu theo id_san, Time, dateOpen, categoryId
+	public MatchModel save(MatchModel matchModel) {
+		// tim tran dau theo id_san, Time, dateOpen, categoryId
 		MatchModel match = matchDao.findOne(matchModel.getId_San(), matchModel.getTime_Start(), matchModel.getDateOpen(), matchModel.getCategoryId());
 		
 		// TH1: trận đấu chưa có
 		if(match == null) {
 			matchModel.setStatus(true);
-			setType(matchModel);
+//			 lưu trận đấu 
 			Long id = matchDao.save(matchModel);
 			return matchDao.findOneById(id);
 		}
 		
-		// TH trận đấu đã có rồi nhưng status = false(đã bị hủy)
+		// TH tran dau co trong Database roi nhung da bi huy
 		else if(match.isStatus() == false) {
-			// userName mới của người dùng trong trận đấu cbi đang xét
+			// userName moi cua tk moi ddang thuc thi viec dat tran moi
 			String userNameNew = matchModel.getUserName();
-			// userName cũ của người dùng trong trận đấu đã có sẵn trong db 
+			// userName cu cua user da tung dat tran dau va huy
 			String userNameOld = match.getUserName();
 			
-			// TH cái mới và cũ là của cùng 1 người đặt
-			// thay đổi giá trị status của match cũ
+			// TH tran dau dang dat la cua cung 1 nguoi
 			if(userNameNew.equals(userNameOld)) {
-				matchDao.update(true, match.getId());
+				matchDao.updateById(true, match.getId());
 				match.setStatus(true);
 				return match;
 			}
-			// TH trận đấu chuẩn bị thêm vào db là của user khác
-			// lưu trận của matchModel mới, giữ nguyên của user cũ
+			// TH tran dau moi la cua user khac
 			else {
 				matchModel.setStatus(true);
-				setType(matchModel);
 				Long id = matchDao.save(matchModel);
 				return matchDao.findOneById(id);
 			}
@@ -68,23 +54,28 @@ public class MatchService implements IMatchservice{
 		return null;
 	}
 
-	
-	// xoa
+	// xóa trận đấu (chỉ admin có quyền xóa)
 	@Override
 	public MatchModel delete(MatchModel matchModel) {
-		matchDao.delete(matchModel.getId_San(), matchModel.getTime_Start(), matchModel.getDateOpen(), matchModel.getType());
+		matchDao.delete(matchModel.getId_San(), matchModel.getTime_Start(), matchModel.getDateOpen(), matchModel.getCategoryId());
 		return null;
 	}
 
-	// liet ke danh sach cho admin
+	// liet ke danh sach trận đấu theo từng thể loại (cho admin)
 	@Override
-	public List<MatchModel> query() {
-		return matchDao.query();
+	public List<MatchModel> query(Boolean status) {
+		return matchDao.query(status);
 	}
 
-	// liet ke danh sach cho user
+	// liet ke danh sach các trận đấu (cho user)
 	@Override
-	public List<MatchModel> findAllByIdUser(UserModel user) {
+	public List<MatchModel> findAllByUserName(UserModel user) {
 		return matchDao.findAllByUserName(user.getUserName());
+	}
+
+	// huy tran dau (cua user)
+	@Override
+	public void update(MatchModel matchModel) {
+		matchDao.update(false, matchModel.getTime_Start(), matchModel.getCategoryId(), matchModel.getDateOpen(), matchModel.getId_San());
 	}
 }

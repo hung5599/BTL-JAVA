@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/chi-tiet-san", "/dat-san"})
+@WebServlet(urlPatterns = {"/chi-tiet-san-bong-da"})
 public class ChiTietSanController extends HttpServlet{
 	
 	private static final long serialVersionUID = -6228568442953779633L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/views/web/chitietsan.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/views/web/chitietsanbongda.jsp");
 		rd.forward(request, response);
 	}
 	

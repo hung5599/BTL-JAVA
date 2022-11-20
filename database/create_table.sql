@@ -1,7 +1,7 @@
-CREATE DATABASE VD_2
+CREATE DATABASE projectJava
 GO
 
-USE VD_2
+USE projectJava
 GO
 
 CREATE TABLE role(
@@ -11,82 +11,69 @@ CREATE TABLE role(
 )
 GO
 
-CREATE TABLE Users_1
+CREATE TABLE users
 (
-	Id BIGINT IDENTITY (1,1) NOT NULL,
-	UserName VARCHAR(50) NOT NULL,
-	PassWord VARCHAR(50) NOT NULL,
-	Address NVARCHAR(100) NULL,
-	PhoneNum VARCHAR(15) NULL,
-	RoleId BIGINT NULL,
-	Gender BIT NOT NULL,
-	DOB DATE NULL,
+	id BIGINT IDENTITY (1,1) NOT NULL,
+	username VARCHAR(50) NOT NULL,
+	password VARCHAR(50) NOT NULL,
+	address NVARCHAR(100) NULL,
+	phonenumber VARCHAR(15) NULL,
+	roleid BIGINT NULL,
+	gender BIT NOT NULL,
+	dob DATE NULL,
 	status int not null
 
 	PRIMARY KEY(Id)
 )
 GO
 
-ALTER TABLE Users_1 ADD CONSTRAINT fk_Users_role FOREIGN KEY(RoleId) REFERENCES role(id)
+ALTER TABLE users ADD CONSTRAINT fk_users_role FOREIGN KEY(roleid) REFERENCES role(id)
 GO
 
-CREATE TABLE category
+CREATE TABLE san
 (
-	id BIGINT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-	Name NVARCHAR(255) NOT NULL,
-	SoLuong INT NULL,
-	code varchar(255) not null
-)
-GO
-
-CREATE TABLE Sân1
-(
-	Id BIGINT IDENTITY (1,1) NOT NULL,
+	id BIGINT IDENTITY (1,1) NOT NULL,
 	categoryid BIGINT NOT NULL,
 	name VARCHAR(150) NOT NULL,
-	Date_Open DATE NULL,
-	Price FLOAT NOT NULL,
-	Status BIT NOT NULL,
-    Time DATETIME NULL
+	dateopen DATE NULL,
+	price FLOAT NOT NULL,
+	status BIT NOT NULL,
+    time DATETIME NULL
 
-	PRIMARY KEY(Id)
-
-	FOREIGN KEY(categoryid) REFERENCES dbo.category(id)
+	PRIMARY KEY(id)
 )
 GO
 
 
-CREATE TABLE match_1
+CREATE TABLE match
 (
-	Id BIGINT IDENTITY (1,1) NOT NULL,
-	Id_Sân BIGINT NULL,
+	id BIGINT IDENTITY (1,1) NOT NULL,
+	id_san BIGINT NULL,
 	id_user bigint null,
-	Time_Start char(20) NULL,
-	Time_End char(20) NULL,
-	Status BIT NOT NULL,
-	Date_Open DATE NULL
+	time_start char(20) NULL,
+	time_end char(20) NULL,
+	status BIT NOT NULL,
+	date_open DATE NULL
 
-	PRIMARY KEY(Id)
-	foreign key(id_user) references users_1(Id),
-	FOREIGN KEY(Id_Sân) REFERENCES dbo.Sân(Id)
+	PRIMARY KEY(id)
+	foreign key(id_user) references users(id),
+	FOREIGN KEY(id_sân) REFERENCES dbo.san(id)
 )
 GO
 
 
 CREATE TABLE bill
 (
-	Id BIGINT IDENTITY (1,1) NOT NULL,
+	id BIGINT IDENTITY (1,1) NOT NULL,
 	id_match BIGINT UNIQUE NOT NULL,
-	Id_Client BIGINT NOT NULL,
-	Date DATE NOT NULL,
+	date DATE NOT NULL,
 	total FLOAT NOT NULL,
-	Status BIT NOT NULL
+	type nvarchar(255) null,
+	username varchar(255) null
 
 	PRIMARY KEY(Id)
 )
 GO
 
 ALTER TABLE bill ADD FOREIGN KEY(id_match) REFERENCES match(Id)
-
-ALTER TABLE bill ADD FOREIGN KEY(Id_Client) REFERENCES dbo.Users(Id)
 

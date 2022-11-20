@@ -1,18 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   <%@ include file = "/common/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- CSS -->
 	<link rel="stylesheet" href="<c:url value = '/template/web/asset/CSS/datsan.css' />" >
-	<link href="<c:url value = '/template/web/asset/font/fontawesome-free-6.1.2-web/css/all.css'/>" rel = "stylesheet" type = "text/css" media="all" />
-	<link href="<c:url value = 'https://fonts.googleapis.com/css?family=Dancing+Script|Itim|Lobster
-				|Montserrat:500|Noto+Serif|Nunito|Patrick+Hand|Roboto+Mono:100,100i,300,300i,400,400i,
-				500,500i,700,700i|Roboto+Slab|Saira'/>" rel = "stylesheet" type = "text/css" media="all" />
+	<link rel="stylesheet" href="<c:url value = '/template/web/asset/font/css/all.css' />">
+
 	<title>Đặt Sân</title>
 </head>
 <body>
 
+	<!-- Header -->
+	<%@include file="/common/web/header.jsp"%>
+	<!-- End header -->
+	
+	<dec:body/>
+	
 </body>
 </html>

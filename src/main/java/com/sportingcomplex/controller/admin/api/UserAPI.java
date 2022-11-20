@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sportingcomlex.service.IUserService;
+import com.sportingcomplex.model.UsModel;
 import com.sportingcomplex.model.UserModel;
 import com.sportingcomplex.utils.HttpUtil;
 
@@ -31,9 +32,9 @@ public class UserAPI extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
-		UserModel userModel = HttpUtil.of(request.getReader()).toModel(UserModel.class);
-		userModel = userService.save(userModel);
-		mapper.writeValue(response.getOutputStream(), userModel);
+//		UsModel us = HttpUtil.of(request.getReader()).toModel(UsModel.class);
+//		us = userService.save(us);
+//		mapper.writeValue(response.getOutputStream(), us);
 		
 	}
 	

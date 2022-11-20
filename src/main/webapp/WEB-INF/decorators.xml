@@ -2,23 +2,63 @@
 
 <!-- Các file .jsp trong page nằm trong thư mục /decorators -->
 <decorators defaultdir="/decorators">
-    <!-- Any urls that are excluded will never be decorated by Sitemesh -->
-    <excludes>
-        <pattern>/api*</pattern>
-    </excludes>
-    
-    <!-- apply Sitemesh default template -->
-    <decorator name="admin" page="admin.jsp">
-        <pattern>/admin*</pattern>
-    </decorator>
-    
-    <!-- Trả về giao diện web khi url có dạng /... -->
-    <decorator name="web" page="web.jsp">
-        <pattern>/*</pattern>
-    </decorator>
-    
-    <decorator name="chitietsan" page="chitietsan.jsp">
-        <pattern>/chi-tiet-san</pattern>
+
+	<!-- Any urls that are excluded will never be decorated by Sitemesh -->
+	<excludes>
+		<pattern>/api*</pattern>
+	</excludes>
+
+	<!-- apply Sitemesh default template -->
+	<decorator name="admin" page="admin.jsp">
+		<pattern>/admin*</pattern>
+	</decorator>
+
+	<!-- Trả về giao diện web khi url có dạng /... -->
+	<decorator name="web" page="web.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+
+	<decorator name="chitietsan" page="chitietsanbongda.jsp">
+		<pattern>/chi-tiet-san-bong-da</pattern>
+	</decorator>
+
+	<decorator name="chitietsan" page="chitietsantennis.jsp">
+		<pattern>/chi-tiet-san-tennis</pattern>
+	</decorator>
+
+	<decorator name="chitietsan" page="chitietsancaulong.jsp">
+		<pattern>/chi-tiet-san-cau-long</pattern>
+	</decorator>
+
+	<decorator name="datsan" page="datsan.jsp">
+		<pattern>/dat-san</pattern>
+	</decorator>
+
+	<decorator name="dienthongtin" page="dienthongtin.jsp">
+		<pattern>/dien-thong-tin</pattern>
+	</decorator>
+
+	<decorator name="thanhtoan" page="thanhtoan.jsp">
+		<pattern>/thanh-toan</pattern>
+	</decorator>
+
+	<decorator name="quanlisan" page="quanlisan.jsp">
+		<pattern>/admin-quan-li-san</pattern>
+	</decorator>
+
+	<decorator name="quanlitrandauadmin" page="admin.jsp">
+		<pattern>/admin-quan-li-tran-dau</pattern>
+	</decorator>
+	
+	<decorator name="danhsachtrandau" page="quanlitrandau.jsp">
+		<pattern>/danh-sach-tran-dau</pattern>
+	</decorator>
+	
+    <decorator name="login" page="login.jsp">
+        <pattern>/log-in</pattern>
+    </decorator>    
+	<decorator name="signup" page="signup.jsp">
+        <pattern>/sign-up</pattern>        
     </decorator>
 
 </decorators>

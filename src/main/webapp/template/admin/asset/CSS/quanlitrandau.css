@@ -1,0 +1,99 @@
+:root{
+	 --tone: #CDF0EA;
+    --tone1: #CDF0EA;
+    --tone2: #7895B2;
+}
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif ;
+    height: 100vh;
+    overflow-x: hidden;
+    background-size: 200px;
+     height: auto;
+      width: 100%;
+}
+/*Header*/
+header {
+    background-color:#3B3486;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    align-items: center;
+    position: relative;
+}
+
+header .con1 #logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 5px;
+}
+
+.con1 {
+    height: 100%;
+    width: 30%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+.con1 #name {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.con2 {
+    height: 100%;
+    width: 13%;
+    color: white;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: larger;
+}
+.con2 ul li{
+    line-height: 60px;
+    list-style: none;
+    padding: 0 10px;
+}
+.con2  ul li i{
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.con2 ul li .sub_menu {
+    background-color: #3B3486;
+    display: none;
+    position: absolute;
+}
+.con2 ul li:hover .sub_menu{
+    display: block;
+    cursor: pointer;
+}
+.con2 ul .sub_menu li a{
+    color: white;
+    text-decoration: none;
+}
+.con2 ul .sub_menu li:hover{
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}
+/* table  */
+.content .manage_table{
+    width: 100%;
+}
+.content .manage_table h3{
+    margin-left: 2.5%;
+}
+.content .manage_table  .table1{
+    width: 95%;
+    margin: 0 2.5%;
+}
+.content .manage_table .table1,th,td{
+    border: solid 1px black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px 0;
+}

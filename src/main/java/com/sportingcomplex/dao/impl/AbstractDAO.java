@@ -7,9 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.sql.Date;
 import java.util.*;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.google.common.base.Service.State;
 import com.sportingcomlex.mapper.RowMapper;
 import com.sportingcomplex.dao.GenericDAO;
@@ -21,7 +23,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 	protected Connection getConnection() {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			String url = "jdbc:sqlserver://localhost;database=VD_2;";
+			String url = "jdbc:sqlserver://localhost;database = project_java_sporting_complex";
 			String user = "project";
 			String password = "1234";
 			return DriverManager.getConnection(url, user, password);
@@ -44,9 +46,6 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				}
 				else if(parameter instanceof Integer) {
 					statement.setInt(index, (Integer)parameter);
-				}
-				else if(parameter instanceof Timestamp) {
-					statement.setTimestamp(index, (Timestamp)parameter);
 				}
 				else if(parameter instanceof Float) {
 					statement.setFloat(index, (Float)parameter);
@@ -86,11 +85,11 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 						if(resultset != null) {
 							resultset.close();
 						}
-						if(statement != null) {
-							statement.close();
-						}
 						if(connection != null) {
 							connection.close();
+						}
+						if(statement != null) {
+							statement.close();
 						}
 					} catch (SQLException e) {
 						return null;

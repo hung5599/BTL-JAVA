@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sportingcomlex.service.IMatchservice;
+import com.sportingcomplex.model.BillModel;
 import com.sportingcomplex.model.MatchModel;
 import com.sportingcomplex.utils.HttpUtil;
 
@@ -31,22 +32,24 @@ public class MatchAPI extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
-		List<MatchModel> list = matchService.query();
+		List<MatchModel> list = matchService.query(true);
 		mapper.writeValue(response.getOutputStream(), list);
 	}
 	
 	// thêm 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("application/json");
-		ObjectMapper mapper = new ObjectMapper();
-		MatchModel matchModel = HttpUtil.of(request.getReader()).toModel(MatchModel.class);
-		matchModel = matchService.save(matchModel);
-		if(matchModel == null) {
-			mapper.writeValue(response.getOutputStream(), "{title: khung giờ đã được đặt}");
-		}
-		else mapper.writeValue(response.getOutputStream(), matchModel);
-	}
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+//		request.setCharacterEncoding("UTF-8");
+//		response.setContentType("application/json");
+//		ObjectMapper mapper = new ObjectMapper();
+//		MatchModel matchModel = HttpUtil.of(request.getReader()).toModel(MatchModel.class);
+//		matchModel = matchService.save(matchModel);
+//		if(matchModel == null) {
+//			mapper.writeValue(response.getOutputStream(), "{title: khung giờ đã được đặt}");
+//		}
+//		else mapper.writeValue(response.getOutputStream(), matchModel);
+////		mapper.writeValue(response.getOutputStream(), matchModel);
+//		
+//	}
 	
 	// xóa
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -55,6 +58,6 @@ public class MatchAPI extends HttpServlet{
 		ObjectMapper mapper = new ObjectMapper();
 		MatchModel matchModel = HttpUtil.of(request.getReader()).toModel(MatchModel.class);
 		matchModel = matchService.delete(matchModel);
-		mapper.writeValue(response.getOutputStream(), matchModel);
+		mapper.writeValue(response.getOutputStream(), "{title: xóa trận đấu thành công}");
 	}
 }

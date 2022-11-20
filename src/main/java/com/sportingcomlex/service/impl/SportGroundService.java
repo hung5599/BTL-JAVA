@@ -23,7 +23,6 @@ public class SportGroundService implements ISportGroundService{
 	// thêm mới
 	@Override
 	public SportGroundModel save(SportGroundModel groundModel) {
-		groundModel.setDateOpen(new Timestamp(System.currentTimeMillis()));
 		Long groundId = sportGroundDAO.save(groundModel);
 		return sportGroundDAO.findOne(groundId);
 	}

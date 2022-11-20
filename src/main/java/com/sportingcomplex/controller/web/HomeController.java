@@ -28,21 +28,7 @@ public class HomeController extends HttpServlet{
 	private ISportGroundService sportGroundService;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		Long category = 2L;
-//		String name = "cầu lông";
-//		Float price = 250f;
-//		Boolean status = true;
-//		SportGroundModel groundModel = new SportGroundModel();
-//		groundModel.setId(8L);
-//		groundModel.setCategoryId(category);
-//		groundModel.setName(name);
-//		groundModel.setPrice(price);
-//		groundModel.setStatus(status);
-//		sportGroundService.update(groundModel);
-//		sportGroundService.save(groundModel);
-//		request.setAttribute("categories", categoryservice.findAll());
-//		sportGroundService.delete(groundModel);
-		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/ground/edit.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
 		rd.forward(request, response);
 	}
 }          

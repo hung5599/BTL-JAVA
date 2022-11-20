@@ -11,13 +11,10 @@ public class SportGroundMapper implements RowMapper<SportGroundModel>{
 	public SportGroundModel mapRow(ResultSet resultset) {
 		try {
 			SportGroundModel sportGround = new SportGroundModel();
-			sportGround.setId(resultset.getLong("Id"));
+			sportGround.setId(resultset.getLong("id"));
 			sportGround.setCategoryId(resultset.getLong("categoryid"));
-			sportGround.setName(resultset.getString("name"));
-			sportGround.setDateOpen(resultset.getTimestamp("Date_Open"));
-			sportGround.setPrice(resultset.getFloat("Price"));
-			sportGround.setStatus(resultset.getBoolean("Status"));
-			sportGround.setTime(resultset.getTimestamp("Time"));
+			sportGround.setPrice(resultset.getFloat("price"));
+			sportGround.setStatus(resultset.getBoolean("status"));
 			return sportGround;
 		} catch(SQLException e) {
 			return null;

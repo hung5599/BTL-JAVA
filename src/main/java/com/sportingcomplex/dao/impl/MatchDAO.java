@@ -1,7 +1,7 @@
 package com.sportingcomplex.dao.impl;
 
-import java.sql.Timestamp;
-import java.util.*;
+import java.util.Date;
+import java.util.List;
 
 import com.sportingcomlex.mapper.MatchMapper;
 import com.sportingcomplex.dao.IMatchDAO;
@@ -12,14 +12,14 @@ public class MatchDAO extends AbstractDAO<MatchModel> implements IMatchDAO{
 	// lưu vào data vao database
 	@Override
 	public Long save(MatchModel matchModel) {
-		String sql = "insert into match_1(Id_Sân, id_user, Time_Start, Status, Date_Open, username, price, categoryid, type) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		return insert(sql, matchModel.getId_San(), matchModel.getId_user(), matchModel.getTime_Start(), matchModel.isStatus(), matchModel.getDateOpen(), matchModel.getUserName(), matchModel.getPrice(), matchModel.getCategoryId(), matchModel.getType());
+		String sql = "insert into match(id_san, time, status, date_open, username, price, categoryid) values(?, ?, ?, ?, ?, ?, ?)";
+		return insert(sql, matchModel.getId_San(), matchModel.getTime_Start(), matchModel.isStatus(), matchModel.getDateOpen(), matchModel.getUserName(), matchModel.getPrice(), matchModel.getCategoryId());
 	}
 
 	// tìm 1 trận đấu theo id_San, khung gio, ngay
 	@Override
 	public MatchModel findOne(Long id_San, String time, Date dateOpen, Long categoryId) {
-		String sql = "select * from match_1 where Id_Sân = ? and Time_Start = ? and Date_Open = ? and categoryid = ?";
+		String sql = "select * from match where id_san = ? and time = ? and date_open = ? and categoryid = ?";
 		List<MatchModel> matchList = query(sql, new MatchMapper(), id_San, time, dateOpen, categoryId);
 		if(matchList.isEmpty()) {
 			return null;
@@ -30,39 +30,51 @@ public class MatchDAO extends AbstractDAO<MatchModel> implements IMatchDAO{
 	// tim kiem thong tin tran dau theo id tran
 	@Override
 	public MatchModel findOneById(Long id) {
-		String sql = "select * from match_1 where Id = ?";
+		String sql = "select * from match where id = ?";
 		List<MatchModel> list = query(sql, new MatchMapper(), id);
-		return list.isEmpty() ? null : list.get(0);
+		if(list.isEmpty()) {
+			return null;
+		}
+		return list.get(0);
 	}
 
 	// xoas tran dau ra khoi database
 	@Override
-	public void delete(Long id_san, String time_Start, Date dateOpen, String type) {
-		String sql = "delete from match_1 where Id_Sân = ? and Time_Start = ? and Date_Open = ? and type = ?";
-		update(sql, id_san, time_Start, dateOpen, type);
+	public void delete(Long id_san, String time_Start, Date dateOpen, Long ccategoryId) {
+		String sql = "delete from match where id_san = ? and time = ? and date_open = ? and categoryid = ?";
+		update(sql, id_san, time_Start, dateOpen, ccategoryId);
 	}
 
-	// liệt kê tất cả các trận đấu đc đăng ki cho admin
+	// liệt kê tất cả các trận đấu đc đăng kí cho admin
 	@Override
-	public List<MatchModel> query() {
-		String sql = "select * from match_1";
-		List<MatchModel> listMatch = query(sql, new MatchMapper());
+	public List<MatchModel> query(Boolean status) {
+		String sql = "select * from match where staus = ?";
+		List<MatchModel> listMatch = query(sql, new MatchMapper(), status);
 		return listMatch;
 	}
 	
 	// liet ke danh sach cac tran dau cuar userName (cho user)
 	@Override
 	public List<MatchModel> findAllByUserName(String userName) {
-		String sql = "select * from match_1 where username = ? and Status = 1";
+		String sql = "select * from match where username = ? and status = 1";
 		List<MatchModel> list = query(sql, new MatchMapper(), userName);
 		return list.isEmpty() ? null : list;
 	}
 
-	// cập nhật lại trạng thái của trận đấu
+	// huy tran dau 
 	@Override
-	public void update(Boolean status, Long id) {
-		String sql = "update match_1 set Status = ? where id = ?";
+	public void update(Boolean status, String time, Long categoryId, Date date, Long id_san) {
+		String sql = "update match set status = ? where time = ? and id_san = ? and categoryid = ? and date_open = ?";
+		update(sql, status, time, id_san, categoryId, date);
+	}
+
+	// update lai trang thai khi dat lai tran dau do 
+	@Override
+	public void updateById(Boolean status, Long id) {
+		String sql = "update match set status = ? where id = ?";
 		update(sql, status, id);
 	}
+	
+	
 	
 }

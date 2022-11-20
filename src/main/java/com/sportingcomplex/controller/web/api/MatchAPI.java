@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sportingcomlex.service.IBillService;
 import com.sportingcomlex.service.IMatchservice;
 import com.sportingcomlex.service.IUserService;
+import com.sportingcomplex.model.BillModel;
 import com.sportingcomplex.model.MatchModel;
 import com.sportingcomplex.model.UserModel;
 import com.sportingcomplex.utils.HttpUtil;
@@ -28,36 +30,46 @@ public class MatchAPI extends HttpServlet{
 	@Inject
 	private IMatchservice matchService;
 	@Inject
-	private IUserService userService;
+	private IBillService billService;
 	
+	// lấy ra danh sách các trận đấu của userName
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
 		// map sang user để get ra ten và tra id_user
 		UserModel user = HttpUtil.of(request.getReader()).toModel(UserModel.class);
-		List<MatchModel> list = matchService.findAllByIdUser(user);
+		List<MatchModel> list = matchService.findAllByUserName(user);
 		mapper.writeValue(response.getOutputStream(), list);
 	}
 	
+	// thêm trận đấu
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
 		MatchModel matchModel = HttpUtil.of(request.getReader()).toModel(MatchModel.class);
 		
-		matchModel = matchService.save(matchModel);
-		if(matchModel == null) {
-			mapper.writeValue(response.getOutputStream(), "{title: khung giờ đã được đặt}");
+		MatchModel match = matchService.save(matchModel);
+		// khong dat duoc tran dau nay
+		if(match == null) {
+			mapper.writeValue(response.getOutputStream(), "{}");
 		}
-		else mapper.writeValue(response.getOutputStream(), matchModel);
+		// dat duoc (tao 1 hoa don)
+		if(match != null) {
+			BillModel bill = billService.save(match);
+			mapper.writeValue(response.getOutputStream(), match);
+		}
 	}
 	
+	// hủy trận đấu
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
-		
-		
+		// id_san, time, date, categoryId, 
+		MatchModel match = HttpUtil.of(request.getReader()).toModel(MatchModel.class);
+		matchService.update(match);
+		mapper.writeValue(response.getOutputStream(), "{title: Hủy sân thành công}");
 	}
 }

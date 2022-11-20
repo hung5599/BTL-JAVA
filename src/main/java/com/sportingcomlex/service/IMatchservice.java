@@ -1,13 +1,14 @@
 package com.sportingcomlex.service;
 
+import java.util.List;
+
 import com.sportingcomplex.model.MatchModel;
 import com.sportingcomplex.model.UserModel;
-
-import java.util.*;
 
 public interface IMatchservice {
 	MatchModel save(MatchModel matchModel);
 	MatchModel delete(MatchModel matchModel);
-	List<MatchModel> query();
-	List<MatchModel> findAllByIdUser(UserModel user);
+	void update(MatchModel matchModel);
+	List<MatchModel> query(Boolean status);
+	List<MatchModel> findAllByUserName(UserModel user);
 }
