@@ -27,12 +27,12 @@ public class MatchAPI extends HttpServlet{
 	@Inject
 	private IMatchservice matchService;
 	
-	// get danh sách
+	// lay ra danh sach cac tran dau cho admin
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
-		List<MatchModel> list = matchService.query(true);
+		List<MatchModel> list = matchService.findAllByStatus(true);
 		mapper.writeValue(response.getOutputStream(), list);
 	}
 	

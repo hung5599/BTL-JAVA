@@ -37,6 +37,7 @@ public class LoginController extends HttpServlet{
 				request.setAttribute("mess", resourceBundle.getString(mess));
 				request.setAttribute("alert", alert);
 			}
+			SessionUtil.getInstance().removeValue(request, "usermod");
 			RequestDispatcher rd = request.getRequestDispatcher("/views/login.jsp");
 			rd.forward(request, response);
 		}else if(action!=null && action.equals("logout")) {

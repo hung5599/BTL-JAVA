@@ -47,9 +47,12 @@ public class MatchDAO extends AbstractDAO<MatchModel> implements IMatchDAO{
 
 	// liệt kê tất cả các trận đấu đc đăng kí cho admin
 	@Override
-	public List<MatchModel> query(Boolean status) {
-		String sql = "select * from match where staus = ?";
-		List<MatchModel> listMatch = query(sql, new MatchMapper(), status);
+	public List<MatchModel> findAllByStatus(Boolean status) {
+		String sql = "select * from match where status = 1";
+		List<MatchModel> listMatch = query(sql, new MatchMapper());
+		if(listMatch.isEmpty()) {
+			return null;
+		}
 		return listMatch;
 	}
 	

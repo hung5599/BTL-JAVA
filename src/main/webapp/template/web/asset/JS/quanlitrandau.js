@@ -1,17 +1,55 @@
-var billAPI= 'http://localhost:3000/Bills'
+var billAPI= 'http://localhost:8080/sportingcomplex/api-web-match'
 function main(){
+    
     getBill()
 }
 main()
+const userName = document.querySelectorAll(".con2 ul li a ")[4].text.split(", ")[1]
+document.querySelector('.content .manage_table h3 span').innerHTML = userName
 //Function
-function getBill(){
-    fetch(billAPI)
+function getBill(Object){
+    // var option = {
+    //     method: 'GET',
+    //     headers: { 
+    //         'Content-Type': 'application/json' 
+    //     },
+    //     body: JSON.stringify(Object)
+    // }
+    // fetch(billAPI, option)
+    //     .then(function(response){
+    //         var res =  response.json()
+    //         res.then(function(data) {
+    //             console.log(data)
+    //         })
+    //     })
+    var option =  {
+        method: 'GET',
+        headers: { 
+            'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(Object),
+        mode: 'cors',
+        cache: 'default'
+        }
+    fetch(billAPI, option)
         .then(function(response){
-            return response.json()
+            var response = response.json()
+            response.then(
+                function(value) {
+                    console.log(value)
+                }
+            )
         })
-        .then(function(bills){
-            renderBillToTable(bills)
-        })
+}
+
+function btn() {
+    var x = document.querySelector(".getBtn")
+    x.onclick = function() {
+        var Object = {
+            "userName": userName
+        }
+        getBill(Object)
+    }
 }
 function renderBillToTable(bills){
     var table = document.querySelector(".manage_table .table1")
@@ -37,7 +75,7 @@ function saveRowData(r,id) {
         deletedMatch = table.rows.item(i)
         var result={
             "id_san" : parseInt(deletedMatch.cells[0].innerHTML),
-            "user_name" : document.querySelector('.content .manage_table h3 span').innerHTML,
+            "user_name" : userName,
             "categoryId" : reExchangeCategoryId(deletedMatch.cells[1].innerHTML),
             "time" : deletedMatch.cells[3].innerHTML,
             "price": deletedMatch.cells[4].innerHTML,

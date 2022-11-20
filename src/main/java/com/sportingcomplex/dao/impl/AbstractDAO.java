@@ -11,6 +11,9 @@ import java.sql.Types;
 import java.sql.Date;
 import java.util.*;
 
+import org.apache.commons.lang.ObjectUtils.Null;
+import org.codehaus.jackson.map.jsontype.impl.AsExternalTypeSerializer;
+
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.google.common.base.Service.State;
 import com.sportingcomlex.mapper.RowMapper;
@@ -55,6 +58,9 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				} 
 				else if(parameter instanceof Date) {
 					statement.setDate(index, (Date)parameter);
+				}
+				else if(parameter instanceof Null) {
+					statement.setNull(index, java.sql.Types.NULL);
 				}
 			}
 		} catch(SQLException e) {

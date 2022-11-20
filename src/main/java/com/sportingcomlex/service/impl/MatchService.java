@@ -61,10 +61,10 @@ public class MatchService implements IMatchservice{
 		return null;
 	}
 
-	// liet ke danh sach trận đấu theo từng thể loại (cho admin)
+	// liet ke danh sach tran dau da duoc dat(cho admin)
 	@Override
-	public List<MatchModel> query(Boolean status) {
-		return matchDao.query(status);
+	public List<MatchModel> findAllByStatus(Boolean Status) {
+		return matchDao.findAllByStatus(Status);
 	}
 
 	// liet ke danh sach các trận đấu (cho user)
