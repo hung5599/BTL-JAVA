@@ -15,6 +15,7 @@ import com.sportingcomlex.service.IUserService;
 import com.sportingcomplex.model.UserModel;
 import com.sportingcomplex.utils.FormUtil;
 import com.sportingcomplex.utils.HttpUtil;
+import com.sportingcomplex.utils.SessionUtil;
 
 @WebServlet(urlPatterns = {"/sign-up"})
 public class SignUpController extends HttpServlet{
@@ -52,7 +53,7 @@ public class SignUpController extends HttpServlet{
 			}
 			else {
 				model = userService.save(model);
-				response.sendRedirect(request.getContextPath()+"/log-in?action=login&mess=dangkythanhcong&alert=primary");
+				response.sendRedirect(request.getContextPath()+"/dien-thong-tin?mess=dangkythanhcong&alert=primary");
 			}
 		}
 	}

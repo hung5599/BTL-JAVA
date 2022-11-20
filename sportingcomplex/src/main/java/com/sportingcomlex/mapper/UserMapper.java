@@ -14,12 +14,12 @@ public class UserMapper implements RowMapper<UserModel>{
 			UserModel user = new UserModel();
 			user.setId(resultset.getLong("id"));
 			user.setUserName(resultset.getString("username"));
-			user.setFullName(resultset.getString("fullname"));
 			user.setPassWord(resultset.getString("password"));
 			user.setRoleId(resultset.getLong("roleid"));
 			user.setStatus(resultset.getInt("status"));
 			try{
-				user.setAddress(resultset.getString("Adress"));
+				user.setFullName(resultset.getString("fullname"));
+				user.setAddress(resultset.getString("adress"));
 				user.setPhonenumber(resultset.getString("phonenumber"));
 				user.setDate_of_birth(resultset.getDate("dob"));
 			}catch(Exception e){

@@ -22,9 +22,9 @@ public class UserDAO extends AbstractDAO<UserModel> implements IUserDAO {
 
 	@Override
 	public Long save(UserModel userModel) {
-		String sql = "insert into users(username, password, fullname, roleid, status)\n"
-				+ "values(?, ?, ?, ?, ?)";
-	return insert(sql, userModel.getUserName(), userModel.getPassWord(), userModel.getFullName(),2,1);
+		String sql = "insert into users(username, password, roleid, status)\n"
+				+ "values(?, ?, ?, ?)";
+	return insert(sql, userModel.getUserName(), userModel.getPassWord(),2,1);
 	}
 
 	@Override
