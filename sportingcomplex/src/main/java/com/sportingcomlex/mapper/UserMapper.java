@@ -19,7 +19,7 @@ public class UserMapper implements RowMapper<UserModel>{
 			user.setStatus(resultset.getInt("status"));
 			try{
 				user.setFullName(resultset.getString("fullname"));
-				user.setAddress(resultset.getString("adress"));
+				user.setAddress(resultset.getString("address"));
 				user.setPhonenumber(resultset.getString("phonenumber"));
 				user.setDate_of_birth(resultset.getDate("dob"));
 			}catch(Exception e){

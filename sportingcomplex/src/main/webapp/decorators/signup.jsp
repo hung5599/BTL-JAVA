@@ -9,6 +9,28 @@
 	<title><dec:title default="Đăng ký" /></title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<style type="text/css">
+		body{
+			background-color: #3B3486;
+		}
+		.container{
+			border: white solid 1px;
+			width: 30%;
+			border-radius: 10px;
+			background-color: aliceblue;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		.container h2{
+			margin-top: 16px;
+		}
+		.container .btn-success{
+			margin-top: 16px;
+			margin-bottom: 16px;
+		}
+	</style>
 </head>
 <body>
 		<dec:body/>

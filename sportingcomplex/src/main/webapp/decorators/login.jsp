@@ -6,7 +6,52 @@
 <html>
 <head>
 	<title><dec:title default="Đăng nhập" /></title>
-	<link href="<c:url value = '/template/login/login.css' />" rel = "stylesheet" type = "text/css" media="all" />
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<style>
+    .cont{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-color: #3B3486;
+    }
+    .cont1{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+    .form1{
+        width: 30%;
+        background-color: aliceblue;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 10px;
+    }
+    .title{
+        text-align: center;
+    }
+    .form-group1{
+        padding:0 20px;
+        margin: 10px 0;
+        font-size: larger;
+    }
+    .inp{
+        height: 35px;
+        width: 100%;
+        font-size: large;
+    }
+    .submit-btn{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .link{
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+    }
+</style>
 </head>
 <body>
 	<div id="login">
