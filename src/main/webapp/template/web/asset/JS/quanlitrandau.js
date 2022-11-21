@@ -62,18 +62,9 @@ function saveRowData(r,id) {
         var i = r.parentNode.parentNode.rowIndex;
         table = document.querySelector(".table1");
         deletedMatch = table.rows.item(i)
-        // var result={
-        //     "id_San" : parseInt(deletedMatch.cells[0].innerHTML),
-        //     "userName" : userName,
-        //     "categoryId" : reExchangeCategoryId(deletedMatch.cells[1].innerHTML),
-        //     "time_Start" : deletedMatch.cells[3].innerHTML,
-        //     "price": deletedMatch.cells[4].innerHTML,
-        //     "dateOpen" : deletedMatch.cells[2].innerHTML
-        // }
         var ob = {
             "id": id
         }
-        console.log(ob)
         updateSan(ob)
         table.deleteRow(i)
         alert("Hủy sân đấu thành công !")

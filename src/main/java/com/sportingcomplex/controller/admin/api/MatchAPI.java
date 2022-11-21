@@ -36,21 +36,6 @@ public class MatchAPI extends HttpServlet{
 		mapper.writeValue(response.getOutputStream(), list);
 	}
 	
-	// thêm 
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-//		request.setCharacterEncoding("UTF-8");
-//		response.setContentType("application/json");
-//		ObjectMapper mapper = new ObjectMapper();
-//		MatchModel matchModel = HttpUtil.of(request.getReader()).toModel(MatchModel.class);
-//		matchModel = matchService.save(matchModel);
-//		if(matchModel == null) {
-//			mapper.writeValue(response.getOutputStream(), "{title: khung giờ đã được đặt}");
-//		}
-//		else mapper.writeValue(response.getOutputStream(), matchModel);
-////		mapper.writeValue(response.getOutputStream(), matchModel);
-//		
-//	}
-	
 	// xóa
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setCharacterEncoding("UTF-8");

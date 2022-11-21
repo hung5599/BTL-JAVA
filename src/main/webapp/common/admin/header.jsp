@@ -2,6 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ include file = "/common/taglib.jsp" %>
     
+    <head>
+    		<link rel="stylesheet" href='<c:url value = '/template/admin/asset/CSS/header.css'/>'>
+    </head>
  <header>
 	    <div class="con1">
 	        <img id="logo" src="template/web/asset/img/logo.png" alt="">
@@ -14,7 +17,8 @@
 	            	<c:if test="${not empty usermod}">
 	           			Xin chào, ${usermod.userName }
 	       			</c:if>
-	                <i class="fa-solid fa-caret-down"></i>
+	               <i class="fa-solid fa-caret-down"></i>
+	               
 	                <ul class="sub_menu">
 	                    <li><a href="<c:url value = '/admin-quan-li-san' />">Quản lý sân</a></li>
 	                    <li><a href="<c:url value = '/admin-home' />">Quản lý trận đấu</a></li>

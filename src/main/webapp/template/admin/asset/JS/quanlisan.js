@@ -34,34 +34,7 @@ function getSan(){
             renderSanToTable(sans)
         })
 }
-// FETCH POST
-function postSan(data){
-    var option =  {
-        method: 'POST',
-        headers: { 
-            'Content-Type': 'application/json' 
-        },
-        body: JSON.stringify(data)
-        }
-    fetch(sanAPI,option)
-        .then(function(response){
-            response.json()
-        })
-}
-// FETCH DELETE
-function deleteSan(id,callback){
-    var option =  {
-        method: 'DELETE',
-        headers: { 
-            'Content-Type': 'application/json' 
-        }
-        }
-    fetch(sanAPI+'/'+id,option)
-        .then(function(response){
-            response.json()
-        })
-        .then(callback)
-}
+
 //FETCH PATCH
 function updateSan(data,id){
     var option={
@@ -86,28 +59,15 @@ function addNewSanToTable(table,san){
     var row = table[san.categoryId-1].insertRow(1)
         for(var j=0;j<4;j++){
             var newCell1 = row.insertCell(j)
-            if(j==0) newCell1.appendChild(document.createTextNode(san.id_san))
+            if(j==0) newCell1.appendChild(document.createTextNode(san.id))
             if(j==1) newCell1.appendChild(document.createTextNode(san.price))
             if(j==2) newCell1.appendChild(document.createTextNode(getStatus(san.status)))
             if(j==3) newCell1.innerHTML =   `
-            <button class="btn" onclick="deleteSan(${san.id},saveRowData(this,${san.categoryId-1}))" ><i class="fa-solid fa-trash-can"></i> Xóa </button>
-            <button class="btn" onclick="handleUpdateSan(${san.id})" ><i class="fa-solid fa-pen-to-square"></i> Chỉnh thông tin sân </button> 
+            <button class="btn" onclick="handleUpdateSan(${san.id}, ${san.categoryId})" ><i class="fa-solid fa-pen-to-square"></i> Chỉnh thông tin sân </button> 
                                                    `
         }
 }
 
-function saveRowData(r,x) {
-    var i = r.parentNode.parentNode.rowIndex;
-    table = document.querySelectorAll(".table1");
-    deletedMatch = table[x].rows.item(i)
-    var result={
-        "id_san" : parseInt(deletedMatch.cells[0].innerHTML),
-        "categoryId" : x+1,
-        "price" : deletedMatch.cells[1].innerHTML
-    }
-    table[x].deleteRow(i)
-    return result;
-}
 function renderNewSanToTable(){
     var inp = document.querySelectorAll('.content .add-box .form-group input')
     var id_san = inp[0].value
@@ -119,7 +79,7 @@ function renderNewSanToTable(){
     if(id_san=="" ||  price=="") alert("Ban chua nhap du thong tin!")
     else{
         var tmp = {
-            "id_san" : parseInt(id_san),
+            "id_San" : parseInt(id),
             "categoryId" : categoryId,
             "status" : status,
             "price" : parseInt(price)
@@ -129,22 +89,39 @@ function renderNewSanToTable(){
         postSan(tmp)
     }
 }
-function handleUpdateSan(id){
+function handleUpdateSan(id, categoryId){
     openModel()
     var newPrice = parseInt(document.querySelector('.model .update-form .form-group input[name="newPrice"').value)
     var select2 = document.getElementById("newStatus")
     var newStatus = parseInt(select2.options[select2.selectedIndex].value)
-    san.price = newPrice
-    san.status = newStatus
     var updated ={
-        id_san : san.id,
-        categoryId : san.categoryId,
+        id_san : id,
+        categoryId : categoryId,
         price : newPrice,
         status : newStatus
     }
     updateSan(id,updated)
+    
 }
 function getStatus(i){
     if(i==1) return "Tốt"
     else return "Bảo trì"
+}
+
+function update(){
+    removeRow()
+    getBill()
+}
+
+function removeRow(){
+    var x = document.querySelectorAll(".table1")
+    console.log(x)
+    x.forEach(function(table){
+        var tableRows = table.getElementsByTagName('tr');
+        console.log(tableRows)
+        var rowCount = tableRows.length;
+        for (let i=rowCount-1; i>0; i--) {
+            table.deleteRow(i);
+        }
+    })
 }

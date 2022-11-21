@@ -30,7 +30,6 @@ public class SportGroundService implements ISportGroundService{
 	// sửa
 	@Override
 	public SportGroundModel update(SportGroundModel updateGround) {
-//		SportGroundModel oldGround = sportGroundDAO.findOne(updateGround.getId());
 		sportGroundDAO.update(updateGround);
 		return sportGroundDAO.findOne(updateGround.getId());
 	}

@@ -46,35 +46,6 @@
                 </table>
             </div>
             <button class="add_btn " onclick="showAddBox()"><i class="fa-regular fa-square-plus"></i>Thêm sân </button>
-            <div class="add-box">
-                <div class="close"> <button class="close-btn" onclick="closeAddBox()"><i class="fa-solid fa-square-xmark"></i></button></div>
-                <h3>Thêm sân mới</h3>
-                <div class="form-group">
-                    <label for="id_san">Id sân : </label>
-                    <input type="text" name="id_san" required>
-                </div>
-                <div class="form-group">
-                    <label for="categoryId"> Loại sân : </label>
-                    <select name="categoryId" id="categoryId" >
-                        <option value="1">Sân bóng đá</option>
-                        <option value="2">Sân cầu lông</option>
-                        <option value="3">Sân tennis</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="status"> Loại sân : </label>
-                    <select name="status" id="status" >
-                        <option value="1">Tốt</option>
-                        <option value="0">Bảo trì </option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="price"> Giá thuê : </label>
-                    <input type="text" name="price" required>
-                </div>
-                <button class="update-btn" onclick="renderNewSanToTable()">Cập nhật</button>
-            </div>
-        </div>
         <div class="model ">
             <form class="update-form">
                 <div class="close"> 

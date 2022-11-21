@@ -19,10 +19,8 @@
                 <tr>
                     <th>Sân đặt</th>
                     <th>Tên người đặt</th>
-                    <th>Thời gian bắt đầu </th>
-                    <th>Thời gian kết thúc</th>
+                    <th>Thời gian</th>
                     <th>Ngày</th>
-                    <th>Trạng thái</th>
                     <th>Tác vụ</th>
                 </tr>
             </table>
@@ -33,10 +31,8 @@
                 <tr>
                     <th>Sân đặt</th>
                     <th>Tên người đặt</th>
-                    <th>Thời gian bắt đầu </th>
-                    <th>Thời gian kết thúc</th>
+                    <th>Thời gian</th>
                     <th>Ngày</th>
-                    <th>Trạng thái</th>
                     <th>Tác vụ</th>
                 </tr>
             </table>
@@ -47,14 +43,16 @@
                 <tr>
                     <th>Sân đặt</th>
                     <th>Tên người đặt</th>
-                    <th>Thời gian bắt đầu </th>
-                    <th>Thời gian kết thúc</th>
+                    <th>Thời gian</th>
                     <th>Ngày</th>
-                    <th>Trạng thái</th>
                     <th>Tác vụ</th>
                 </tr>
             </table>
         </div>
+    </div>
+    
+    <div class="btn">
+        <button class="update">Cập nhật</button>
     </div>
 </body>
 </html>
