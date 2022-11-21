@@ -4,31 +4,31 @@ import javax.inject.Inject;
 
 import com.sportingcomlex.service.IUserService;
 import com.sportingcomplex.dao.IUserDAO;
-import com.sportingcomplex.model.UsModel;
+import com.sportingcomplex.dao.impl.UserDAO;
 import com.sportingcomplex.model.UserModel;
 
 public class UserService implements IUserService{
+
 	@Inject
-	private IUserDAO userDao;
-
-	@Override
-	public UsModel save(UsModel newModel) {
-		return null;
-	}
-
+	private IUserDAO userDAO;
+	
+	// tim thong tin de dang nhap
 	@Override
 	public UserModel findByUserNameAndPassword(String userName, String passWord) {
-		return userDao.findByUserNameAndPassword(userName, passWord);
+		return userDAO.findByUserNameAndPassword(userName, passWord);
 	}
 
+	// tim kiem theo username
 	@Override
 	public UserModel findByUserName(String userName) {
-		return userDao.findByUserName(userName);
+		return userDAO.findByUserName(userName);
 	}
 
+	// luu thong tin dang ky
 	@Override
-	public UserModel update(UserModel updateUser) {
-		// TODO Auto-generated method stub
-		return null;
+	public UserModel save(UserModel userModel) {
+		Long userId = userDAO.save(userModel);
+		return userDAO.findOne(userId);
 	}
+
 }

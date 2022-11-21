@@ -40,8 +40,8 @@ public class SignUpController extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserModel model = FormUtil.toModel(UserModel.class,request);
-		model = userService.findByUserName(model.getUserName());
-		if(model!=null) {
+		UserModel model1 = userService.findByUserName(model.getUserName());
+		if(model1!=null) {
 			response.sendRedirect(request.getContextPath()+"/sign-up?mess=taikhoandatontai&alert=danger");
 		}
 		else {
@@ -50,8 +50,11 @@ public class SignUpController extends HttpServlet{
 			if(!pass.equals(repass)) {
 				response.sendRedirect(request.getContextPath()+"/sign-up?mess=xacnhanmatkhaukhongdung&alert=danger");
 			}
-			else
+			else {
+				userService.save(model);
 				response.sendRedirect(request.getContextPath()+"/log-in?action=login&mess=dangkythanhcong&alert=primary");
+			}
+			
 		}
 	}
 }

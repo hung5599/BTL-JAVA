@@ -3,7 +3,7 @@ package com.sportingcomplex.model;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-public class MatchModel{
+public class MatchModel implements Comparable<MatchModel>{
 	private Long id;
 	private Long categoryId;
 	private Long id_San;
@@ -60,6 +60,10 @@ public class MatchModel{
 	}
 	public void setPrice(Float price) {
 		this.price = price;
+	}
+	@Override
+	public int compareTo(MatchModel o) {
+		return o.dateOpen.compareTo(this.dateOpen);
 	}
 	
 }

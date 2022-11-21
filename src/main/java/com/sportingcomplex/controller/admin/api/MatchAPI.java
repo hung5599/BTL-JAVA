@@ -33,6 +33,7 @@ public class MatchAPI extends HttpServlet{
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
 		List<MatchModel> list = matchService.findAllByUserName();
+		Collections.sort(list);
 		mapper.writeValue(response.getOutputStream(), list);
 	}
 	

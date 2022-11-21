@@ -14,7 +14,6 @@ import com.sportingcomplex.model.UserModel;
 				UserModel user = new UserModel();
 				user.setId(resultset.getLong("id"));
 				user.setUserName(resultset.getString("username"));
-				user.setFullName(resultset.getString("fullname"));
 				user.setPassWord(resultset.getString("password"));
 				user.setRoleId(resultset.getLong("roleid"));
 				try {

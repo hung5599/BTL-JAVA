@@ -8,6 +8,7 @@ import com.sportingcomplex.model.UserModel;
 
 public class UserDAO extends AbstractDAO<UserModel> implements IUserDAO {
 
+	// dang nhap
 	@Override
 	public UserModel findByUserNameAndPassword(String userName, String passWord) {
 		String sql = "SELECT * FROM users AS u"
@@ -20,13 +21,15 @@ public class UserDAO extends AbstractDAO<UserModel> implements IUserDAO {
 		return users.get(0);
 	}
 
+	// luu thong tin dang ky tai khoan
 	@Override
 	public Long save(UserModel userModel) {
-		String sql = "insert into users(username, password, fullname, roleid)\n"
-				+ "values(?, ?, ?, ?)";
-	return insert(sql, userModel.getUserName(), userModel.getPassWord(), userModel.getFullName(),userModel.getRoleId());
+		String sql = "insert into users(username, password, roleid)\n"
+				+ "values(?, ?, ?)";
+	return insert(sql, userModel.getUserName(), userModel.getPassWord(),2);
 	}
 
+	// tim theo username de dang ky
 	@Override
 	public UserModel findByUserName(String userName) {
 		String sql = "SELECT * FROM users AS u"
@@ -39,6 +42,7 @@ public class UserDAO extends AbstractDAO<UserModel> implements IUserDAO {
 		return users.get(0);
 	}
 
+	// tim user theo id
 	@Override
 	public UserModel findOne(Long id) {
 		String sql = "select * from users where id = ?";

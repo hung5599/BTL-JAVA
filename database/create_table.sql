@@ -13,17 +13,16 @@ GO
 
 CREATE TABLE users
 (
-	id BIGINT IDENTITY (1,1) NOT NULL,
-	username VARCHAR(50) NOT NULL,
+	id bigint not null unique identity(1, 1),
+	username VARCHAR(50) NOT NULL primary key,
 	password VARCHAR(50) NOT NULL,
 	address NVARCHAR(100) NULL,
 	phonenumber VARCHAR(15) NULL,
 	roleid BIGINT NULL,
-	gender BIT NOT NULL,
+	gender BIT NULL,
 	dob DATE NULL,
-	status int not null
-
-	PRIMARY KEY(Id)
+	status int null,
+	fullname nvarchar(255) null
 )
 GO
 
@@ -49,14 +48,14 @@ CREATE TABLE match
 (
 	id BIGINT IDENTITY (1,1) NOT NULL,
 	id_san BIGINT NULL,
-	id_user bigint null,
-	time_start char(20) NULL,
-	time_end char(20) NULL,
+	time char(20) NULL,
 	status BIT NOT NULL,
-	date_open DATE NULL
+	date_open DATE NULL,
+	categoryid bigint not null,
+	price float not null,
+	username varchar(255) not null
 
 	PRIMARY KEY(id)
-	foreign key(id_user) references users(id),
 	FOREIGN KEY(id_sân) REFERENCES dbo.san(id)
 )
 GO

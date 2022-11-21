@@ -43,11 +43,11 @@ function handleCreateUser(){
         if(name==""||gender==""||dob==""||phonenumber=="") alert("Missing Information!")
         else{
             var user ={
-                userName : name,
-                gender : gender,
-                fullName: dob,
-                phoneNumber : phonenumber,
-                address : address
+                "fullName" : name,
+                "gender" : gender,
+                "dateOfBrth": dob,
+                "phoneNumber" : phonenumber,
+                "address" : address
             }
             createUser(user)
         }

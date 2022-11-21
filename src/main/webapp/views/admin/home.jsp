@@ -21,7 +21,6 @@
                     <th>Tên người đặt</th>
                     <th>Thời gian</th>
                     <th>Ngày</th>
-                    <th>Tác vụ</th>
                 </tr>
             </table>
         </div>
@@ -33,7 +32,6 @@
                     <th>Tên người đặt</th>
                     <th>Thời gian</th>
                     <th>Ngày</th>
-                    <th>Tác vụ</th>
                 </tr>
             </table>
         </div>
@@ -45,7 +43,6 @@
                     <th>Tên người đặt</th>
                     <th>Thời gian</th>
                     <th>Ngày</th>
-                    <th>Tác vụ</th>
                 </tr>
             </table>
         </div>
