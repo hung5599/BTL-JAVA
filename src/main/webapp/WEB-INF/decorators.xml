@@ -18,15 +18,15 @@
 		<pattern>/*</pattern>
 	</decorator>
 
-	<decorator name="chitietsan" page="chitietsanbongda.jsp">
+	<decorator name="chitietsanbongda" page="chitietsanbongda.jsp">
 		<pattern>/chi-tiet-san-bong-da</pattern>
 	</decorator>
 
-	<decorator name="chitietsan" page="chitietsantennis.jsp">
+	<decorator name="chitietsantennis" page="chitetsantennis.jsp">
 		<pattern>/chi-tiet-san-tennis</pattern>
 	</decorator>
 
-	<decorator name="chitietsan" page="chitietsancaulong.jsp">
+	<decorator name="chitietsancaulong" page="chitietsancaulong.jsp">
 		<pattern>/chi-tiet-san-cau-long</pattern>
 	</decorator>
 

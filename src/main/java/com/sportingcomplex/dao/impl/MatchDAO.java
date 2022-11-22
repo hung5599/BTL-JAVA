@@ -45,7 +45,7 @@ public class MatchDAO extends AbstractDAO<MatchModel> implements IMatchDAO{
 		update(sql, id_san, time_Start, dateOpen, ccategoryId);
 	}
 	
-	// liet ke danh sach cac tran dau cuar userName (cho user)
+	// liet ke danh sach cac tran dau
 	@Override
 	public List<MatchModel> findAll() {
 		String sql = "select * from match where status = 1";

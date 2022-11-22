@@ -31,7 +31,7 @@
 				  <input type="password" name="repassWord" id="repassWord" class="form-control" >
 				</div>
 
-				<input type="checkbox" id="confirm" name="confirm" value="OK">
+				<input type="checkbox" class="checkBox" id="confirm" name="confirm" value="OK">
 				<label for="confirm">Đồng ý với điều khoản của chúng tôi </label>
 				<a href="">Điều khoản và chính sách</a>
 				<br>
@@ -41,18 +41,20 @@
 		</div>
 	</div>
 
-	<script>
+	<!-- <script>
 		var btn = document.querySelector("#check");
-		var check = document.querySelector("#confirm");
+		var check = document.querySelector(".checkBox");
 		while(true) {
 			if(!check.checked) {
-			btn.setAttribute("disabled", true)
+				btn.setAttribute("disabled", true)
+				console.log(check.checked)
 			}
 			else {
 				btn.setAttribute("disabled", false)
+				console.log(check.checked)
 				return;
 			}
 		}
-	</script>
+	</script> -->
 </body>
 </htmsl>

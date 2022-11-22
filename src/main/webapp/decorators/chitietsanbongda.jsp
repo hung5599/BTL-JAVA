@@ -14,7 +14,7 @@
 	<!-- Javascript -->
 	 <!-- <script type="text/javascript" src = "<c:url value = '/template/web/asset/JS/chitietsan.js' />"></script> -->
 	
-	<title>Chi tiết sân bóng</title>
+	<title><dec:title default="Chi tiết sân bóng đá" /></title>
 </head>
 <body>
 

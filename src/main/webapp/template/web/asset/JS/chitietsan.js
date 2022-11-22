@@ -29,12 +29,10 @@ function createBooking(data){
             response.then(
                 function(value) {
                     if(value == "{}") {
-                        alert("Đặt sân thất bại")
-                        console.log(value)
+                        alert("Khung giờ đã được đặt")
                     }
                     else {
                         alert("Đặt sân thành công")
-                        console.log(value)
                     }
                 }
             )
@@ -42,7 +40,6 @@ function createBooking(data){
 }
 function getBtnId(){
     var x = document.querySelectorAll(".middle .con .book button")
-    // console.log(x)
     for(let i=0;i<x.length;i++){
         x[i].onclick  = function(){
             var san = document.querySelectorAll('.book h3')[i].textContent

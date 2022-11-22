@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = {"/chi-tiet-san-bong-da"})
-public class ChiTietSanController extends HttpServlet{
+public class ChiTietSanBongDaController extends HttpServlet{
 	
 	private static final long serialVersionUID = -6228568442953779633L;
 	

@@ -23,7 +23,7 @@
 			left: 50%;
 			border: 1px solid #9C9C9C;
 			transform: translate(-50%,-50%);
-			height: 524px;
+			height: 485px;
 			padding: 20px 40px 0;
 		}
 		.container h2{
@@ -47,31 +47,7 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	
-	<script src="<c:url value = '/template/asset/login/JS/signup.js' />"></script>
-	
-	<script>
-
-		//Function setOnlcik
-		function setOnlcik(){
-			var x = document.getElementById("check")
-			x.addEventListener("click",getUsernameAndPassword)
-		}
-		setOnlcik()
-
-		function getUsernameAndPassword(){
-			var check = document.getElementById("confirm")
-			var btn = document.getElementById("check")
-			console.log(check.Selected)
-			// if(!check.checked) {
-			//     alert("Bạn chưa đồng ý với các điều khoản của chúng tôi")
-			//     btn.setAttribute(disabled, true)
-			// }
-			// else {
-			//     btn.setAttribute(disabled, false)
-			// }
-			btn.setAttribute(disabled, true)
-}
-	</script>
+	<!-- <script src="<c:url value = '/template/asset/login/JS/signup.js' />"></script> -->
 
 </body>
 
