@@ -1,5 +1,6 @@
 /*HEADER*/
 header {
+    top: 0;
     background-color:none;
     height: 60px;
     width: 100%;
@@ -34,7 +35,7 @@ header .con1 #logo {
 
 .con2 {
     height: 100%;
-    width: 50%;
+    width: 70%;
     color: white;
     display: flex;
     align-items: center;

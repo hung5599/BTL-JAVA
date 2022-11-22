@@ -46,10 +46,6 @@
 		<pattern>/admin-quan-li-san</pattern>
 	</decorator>
 
-	<decorator name="quanlitrandauadmin" page="admin.jsp">
-		<pattern>/admin-quan-li-tran-dau</pattern>
-	</decorator>
-	
 	<decorator name="danhsachtrandau" page="quanlitrandau.jsp">
 		<pattern>/danh-sach-tran-dau</pattern>
 	</decorator>

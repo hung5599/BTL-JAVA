@@ -28,3 +28,29 @@ body{
     text-align: center;
     padding: 5px 0;
 }
+
+/* total */
+.total{
+    width: 95%;
+    border-top: black 2px dashed ;
+    height: 50px;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2.5%;
+}
+.total .text{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    font-weight: 700;
+}
+.total .sum{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: larger;
+    font-weight: 700;
+}

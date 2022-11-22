@@ -9,29 +9,30 @@
 <title>Đăng nhập</title>
 </head>
 <body>
-<body>
- <div class="container cont">
+ <div class="container">
      <div id="login-row" class="row justify-content-center align-items-center">
-         <div id="login-column" class="col-md-6 cont1">
-                 <form id="login-form" class="form form1" action="<c:url value = '/log-in'/>" method="post">
-                     <h1 class="text-center text-info title ">Đăng nhập</h1>
+         <div id="login-column" class="col-md-6">
+             <div id="login-box" class="col-md-12">
+                 <form id="login-form" class="form" action="<c:url value = '/log-in'/>" method="post">
+                     <h3 class="text-center text-info">Đăng nhập</h3>
                         <c:if test="${not empty mess}">
-						<div class="${alert}">${mess}</div>
+						<div class="alert alert-${alert}">${mess}</div>
 			            </c:if>
-                     <div class="form-group form-group1">
-                         <label for="username" class="text-info">Username:</label><br>
-                         <input type="text" name="userName" id="userName" class="form-control inp" placeholder="username">
+                     <div class="form-group">
+                         <label for="username" class="text-info">Tên đăng nhập:</label><br>
+                         <input type="text" name="userName" id="userName" class="form-control" placeholder="Tên đăng nhập">
                      </div>
-                     <div class="form-group form-group1">
-                         <label for="password" class="text-info">Password:</label><br>
-                         <input type="password" name="passWord" id="passWord" class="form-control inp" placeholder="password">
+                     <div class="form-group">
+                         <label for="password" class="text-info">Mật khẩu:</label><br>
+                         <input type="password" name="passWord" id="passWord" class="form-control" placeholder="Mật khẩu">
                      </div>
-                     <div class="form-group form-group1">
+                     <div class="form-group">
                          <label for="remember-me" class="text-info"><span>Nhớ mật khẩu</span><span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                      	 <input type = "hidden" value="login" name = "action"/>
-                     	 <button type="submit" class="btn btn-info btn-md submit-btn">Đăng nhập</button>                  	
+                     	 <button type="submit" class="btn btn-info btn-md btn__login">Đăng nhập</button>
+                     	
                      </div>
-                     <div id="register-link" class="text-right link">
+                     <div id="register-link" class="text-right">
                          <a href="<c:url value = '/sign-up'/>" class="text-info">Đăng ký tại đây</a>
                      </div>
                  </form>
@@ -39,6 +40,6 @@
          </div>
      </div>
  </div>
+
 </body>
-</html>
 </html>

@@ -25,22 +25,6 @@ public class SportGroundAPI extends HttpServlet {
 	@Inject
 	private ISportGroundService groundService;
 
-	// thêm
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// định nghĩa kiểu dữ liệu client gửi lên có thể có tiếng việt
-		request.setCharacterEncoding("UTF-8");
-		// định nghĩa kiểu dữ liệu mà server trả về cho client
-		response.setContentType("application/json");
-		SportGroundModel groundModel = HttpUtil.of(request.getReader()).toModel(SportGroundModel.class);
-		groundModel = groundService.save(groundModel);
-		
-		// trả data về cho client
-		ObjectMapper mapper = new ObjectMapper();
-		mapper.writeValue(response.getOutputStream(), groundModel);
-	}
-	
-	
 	// cập nhật (sửa)
 	protected void doPut(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

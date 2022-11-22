@@ -12,6 +12,11 @@
     
 </head>
 <body>
+
+	<!-- Header -->
+	<%@ include file = "/common/admin/header.jsp" %>
+	<!-- End header -->
+	
 	<dec:body/>
 	
 	<script type="text/javascript" src = "<c:url value = '/template/admin/asset/JS/admin.js' />"></script>

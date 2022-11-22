@@ -14,6 +14,9 @@
         <link href="<c:url value = '/template/web/asset/font/css/all.css'/>" rel = "stylesheet" type = "text/css" media="all" >
     </head>
 <body>
+
+	<%@ include file = "/common/admin/header.jsp" %>
+
 	<dec:body/>
 	
 	<script type="text/javascript" src = "<c:url value = '/template/admin/asset/JS/quanlisan.js' />"></script>

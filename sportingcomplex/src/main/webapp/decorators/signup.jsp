@@ -11,17 +11,20 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<style type="text/css">
 		body{
-			background-color: #3B3486;
+			background-color: #17a2b8;
 		}
 		.container{
-			border: white solid 1px;
-			width: 30%;
+			border: 1px solid #9C9C9C;
+		  	background-color: #EAEAEA;
+			max-width: 600px;
 			border-radius: 10px;
-			background-color: aliceblue;
 			position: absolute;
 			top: 50%;
 			left: 50%;
+			border: 1px solid #9C9C9C;
 			transform: translate(-50%,-50%);
+			height: 524px;
+			padding: 20px 40px 0;
 		}
 		.container h2{
 			margin-top: 16px;
@@ -31,6 +34,7 @@
 			margin-bottom: 16px;
 		}
 	</style>
+
 </head>
 <body>
 		<dec:body/>
@@ -43,6 +47,32 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	
+	<script src="<c:url value = '/template/asset/login/JS/signup.js' />"></script>
+	
+	<script>
+
+		//Function setOnlcik
+		function setOnlcik(){
+			var x = document.getElementById("check")
+			x.addEventListener("click",getUsernameAndPassword)
+		}
+		setOnlcik()
+
+		function getUsernameAndPassword(){
+			var check = document.getElementById("confirm")
+			var btn = document.getElementById("check")
+			console.log(check.Selected)
+			// if(!check.checked) {
+			//     alert("Bạn chưa đồng ý với các điều khoản của chúng tôi")
+			//     btn.setAttribute(disabled, true)
+			// }
+			// else {
+			//     btn.setAttribute(disabled, false)
+			// }
+			btn.setAttribute(disabled, true)
+}
+	</script>
+
 </body>
 
 </html>

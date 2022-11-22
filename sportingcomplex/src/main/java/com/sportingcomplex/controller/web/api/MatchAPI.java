@@ -1,7 +1,7 @@
 package com.sportingcomplex.controller.web.api;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -13,10 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sportingcomlex.service.IBillService;
 import com.sportingcomlex.service.IMatchservice;
-import com.sportingcomlex.service.IUserService;
 import com.sportingcomplex.model.BillModel;
 import com.sportingcomplex.model.MatchModel;
-import com.sportingcomplex.model.UserModel;
 import com.sportingcomplex.utils.HttpUtil;
 
 @WebServlet(urlPatterns = {"/api-web-match"})
@@ -38,8 +36,8 @@ public class MatchAPI extends HttpServlet{
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
 		// map sang user để get ra ten và tra id_user
-		UserModel user = HttpUtil.of(request.getReader()).toModel(UserModel.class);
-		List<MatchModel> list = matchService.findAllByUserName(user);
+//		UserModel user = HttpUtil.of(request.getReader()).toModel(UserModel.class);
+		List<MatchModel> list = matchService.findAll();
 		mapper.writeValue(response.getOutputStream(), list);
 	}
 	
@@ -70,6 +68,6 @@ public class MatchAPI extends HttpServlet{
 		// id_san, time, date, categoryId, 
 		MatchModel match = HttpUtil.of(request.getReader()).toModel(MatchModel.class);
 		matchService.update(match);
-		mapper.writeValue(response.getOutputStream(), "{title: Hủy sân thành công}");
+		mapper.writeValue(response.getOutputStream(), "{}");
 	}
 }

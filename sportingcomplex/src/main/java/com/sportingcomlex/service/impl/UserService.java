@@ -10,23 +10,20 @@ public class UserService implements IUserService{
 
 	@Inject
 	private IUserDAO userDAO;
+	
+	// tim thong tin de dang nhap
 	@Override
 	public UserModel findByUserNameAndPassword(String userName, String passWord) {
 		return userDAO.findByUserNameAndPassword(userName, passWord);
 	}
 
-	@Override
-	public UserModel update(UserModel updateUser) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
+	// tim kiem theo username
 	@Override
 	public UserModel findByUserName(String userName) {
 		return userDAO.findByUserName(userName);
 	}
 
+	// luu thong tin dang ky
 	@Override
 	public UserModel save(UserModel userModel) {
 		Long userId = userDAO.save(userModel);

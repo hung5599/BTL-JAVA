@@ -14,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.sportingcomlex.service.IUserService;
 import com.sportingcomplex.model.UserModel;
 import com.sportingcomplex.utils.FormUtil;
-import com.sportingcomplex.utils.HttpUtil;
-import com.sportingcomplex.utils.SessionUtil;
 
 @WebServlet(urlPatterns = {"/sign-up"})
 public class SignUpController extends HttpServlet{
@@ -47,15 +45,16 @@ public class SignUpController extends HttpServlet{
 			response.sendRedirect(request.getContextPath()+"/sign-up?mess=taikhoandatontai&alert=danger");
 		}
 		else {
+			String pass = request.getParameter("passWord");
 			String repass = request.getParameter("repassWord");
-			if(!model.getPassWord().equals(repass)) {
+			if(!pass.equals(repass)) {
 				response.sendRedirect(request.getContextPath()+"/sign-up?mess=xacnhanmatkhaukhongdung&alert=danger");
 			}
 			else {
-				model = userService.save(model);
-				response.sendRedirect(request.getContextPath()+"/dien-thong-tin?mess=dangkythanhcong&alert=primary");
+				userService.save(model);
+				response.sendRedirect(request.getContextPath()+"/log-in?action=login&mess=dangkythanhcong&alert=primary");
 			}
+			
 		}
 	}
 }
-

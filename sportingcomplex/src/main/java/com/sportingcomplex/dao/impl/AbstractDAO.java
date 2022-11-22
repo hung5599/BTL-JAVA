@@ -1,26 +1,28 @@
 package com.sportingcomplex.dao.impl;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.lang.ObjectUtils.Null;
 
 import com.sportingcomlex.mapper.RowMapper;
 import com.sportingcomplex.dao.GenericDAO;
 
 public class AbstractDAO<T> implements GenericDAO<T> {
 
-	// load driver cá»§a sql server Ä‘á»ƒ káº¿t ná»‘i csdl
-	// má»Ÿ káº¿t ná»‘i tá»›i csdl
+	// load driver của sql server để kết nối csdl
+	// mở kết nối tới csdl
 	protected Connection getConnection() {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			String url = "jdbc:sqlserver://localhost;database=projectJava1;";
+			String url = "jdbc:sqlserver://localhost;database = project_java_sporting_complex";
 			String user = "project";
 			String password = "1234";
 			return DriverManager.getConnection(url, user, password);
@@ -29,7 +31,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 		}
 	}
 	
-	// set parameter truyá»�n vÃ o cÃ¡c cÃ¢u lá»‡nh sql
+	// set parameter truyền vào các câu lệnh sql
 	private void setParameter(PreparedStatement statement, Object...parameters) {
 		try {
 			for(int i = 0; i < parameters.length; i++) {
@@ -44,14 +46,17 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				else if(parameter instanceof Integer) {
 					statement.setInt(index, (Integer)parameter);
 				}
-				else if(parameter instanceof Timestamp) {
-					statement.setTimestamp(index, (Timestamp)parameter);
-				}
 				else if(parameter instanceof Float) {
 					statement.setFloat(index, (Float)parameter);
 				}
 				else if(parameter instanceof Boolean) {
 					statement.setBoolean(index, (Boolean)parameter);
+				} 
+				else if(parameter instanceof Date) {
+					statement.setDate(index, (Date)parameter);
+				}
+				else if(parameter instanceof Null) {
+					statement.setNull(index, java.sql.Types.NULL);
 				}
 			}
 		} catch(SQLException e) {
@@ -82,11 +87,11 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 						if(resultset != null) {
 							resultset.close();
 						}
-						if(statement != null) {
-							statement.close();
-						}
 						if(connection != null) {
 							connection.close();
+						}
+						if(statement != null) {
+							statement.close();
 						}
 					} catch (SQLException e) {
 						return null;

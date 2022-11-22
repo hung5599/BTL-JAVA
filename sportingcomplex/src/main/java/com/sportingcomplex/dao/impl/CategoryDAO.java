@@ -1,7 +1,6 @@
 package com.sportingcomplex.dao.impl;
 
-import java.sql.*;
-import java.util.*;
+import java.util.List;
 
 import com.sportingcomlex.mapper.CategoryMapper;
 import com.sportingcomplex.dao.ICategoryDAO;

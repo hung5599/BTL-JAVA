@@ -15,6 +15,7 @@
 	<!-- Header -->
 	<%@include file="/common/web/header.jsp"%>
 	<!-- End header -->
+	
 	<dec:body/>
 </body>
 </html>

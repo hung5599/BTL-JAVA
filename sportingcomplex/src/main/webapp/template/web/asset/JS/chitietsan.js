@@ -30,9 +30,11 @@ function createBooking(data){
                 function(value) {
                     if(value == "{}") {
                         alert("Đặt sân thất bại")
+                        console.log(value)
                     }
                     else {
                         alert("Đặt sân thành công")
+                        console.log(value)
                     }
                 }
             )
@@ -49,12 +51,12 @@ function getBtnId(){
             var time = select1.options[select1.selectedIndex].text
             var select2 = document.querySelectorAll('.book #days')[i]
             var day = select2.options[select2.selectedIndex].text
-            var user = document.querySelectorAll(".con2 ul li a ")[3].text
+            var user = document.querySelectorAll(".con2 ul li a ")[4].text
             var Object = {
                 "categoryId" : getCategoryId(san.split(" ")[0]),
                 "id_San" :     parseInt(san.split(" ")[1]),
                 "price" :parseInt(price),
-                "userName" : user,
+                "userName" : user.split(", ")[1],
                 "time_Start" : time,
                 "dateOpen" : solve(day)
             }   

@@ -7,51 +7,32 @@
 <head>
 	<title><dec:title default="Đăng nhập" /></title>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<style>
-    .cont{
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        background-color: #3B3486;
-    }
-    .cont1{
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-    }
-    .form1{
-        width: 30%;
-        background-color: aliceblue;
-        position: absolute;
-        top:50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        border-radius: 10px;
-    }
-    .title{
-        text-align: center;
-    }
-    .form-group1{
-        padding:0 20px;
-        margin: 10px 0;
-        font-size: larger;
-    }
-    .inp{
-        height: 35px;
-        width: 100%;
-        font-size: large;
-    }
-    .submit-btn{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .link{
-        margin: 30px 0;
-        display: flex;
-        justify-content: center;
-    }
-</style>
+	<style type="text/css">
+		body {
+		  margin: 0;
+		  padding: 0;
+		  background-color: #17a2b8;
+		  height: 100vh;
+		}
+		#login .container #login-row #login-column #login-box {
+		  margin-top: 120px;
+		  max-width: 600px;
+		  height: 400px;
+		  border: 1px solid #9C9C9C;
+		  background-color: #EAEAEA;
+		  border-radius: 10px;
+		}
+		#login .container #login-row #login-column #login-box #login-form {
+		  padding: 20px;
+		}
+		#login .container #login-row #login-column #login-box #login-form #register-link {
+		  margin-top: -85px;
+		}
+		.form-group .btn__login{
+			width: 100%;
+    		background-color: #28a745;
+		}
+	</style>
 </head>
 <body>
 	<div id="login">

@@ -31,17 +31,9 @@ public class UserAPI extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
-//		UsModel us = HttpUtil.of(request.getReader()).toModel(UsModel.class);
-//		us = userService.save(us);
-//		mapper.writeValue(response.getOutputStream(), us);
-		
-	}
-	
-	// sửa trạng thái của user
-	// status = 1: tk đang còn hoạt động
-	// status = 0: tk khoản đã bị khóa 
-	protected void doPut(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException {
-		
+		UserModel user = HttpUtil.of(request.getReader()).toModel(UserModel.class);
+		user = userService.save(user);
+		mapper.writeValue(response.getOutputStream(), user);
 	}
 
 }
