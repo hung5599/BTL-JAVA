@@ -19,17 +19,17 @@
 						<div class="alert alert-${alert}">${mess}</div>
 			            </c:if>
                      <div class="form-group">
-                         <label for="username" class="text-info">Username:</label><br>
-                         <input type="text" name="userName" id="userName" class="form-control" placeholder="username">
+                         <label for="username" class="text-info">Tên đăng nhập:</label><br>
+                         <input type="text" name="userName" id="userName" class="form-control" placeholder="Tên đăng nhập">
                      </div>
                      <div class="form-group">
-                         <label for="password" class="text-info">Password:</label><br>
-                         <input type="password" name="passWord" id="passWord" class="form-control" placeholder="password">
+                         <label for="password" class="text-info">Mật khẩu:</label><br>
+                         <input type="password" name="passWord" id="passWord" class="form-control" placeholder="Mật khẩu">
                      </div>
                      <div class="form-group">
                          <label for="remember-me" class="text-info"><span>Nhớ mật khẩu</span><span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                      	 <input type = "hidden" value="login" name = "action"/>
-                     	 <button type="submit" class="btn btn-info btn-md">Đăng nhập</button>
+                     	 <button type="submit" class="btn btn-info btn-md btn__login">Đăng nhập</button>
                      	
                      </div>
                      <div id="register-link" class="text-right">

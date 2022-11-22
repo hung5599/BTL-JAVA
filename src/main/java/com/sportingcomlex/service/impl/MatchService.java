@@ -44,8 +44,8 @@ public class MatchService implements IMatchservice{
 
 	// liet ke danh sach cac tran dau 
 	@Override
-	public List<MatchModel> findAllByUserName() {
-		return matchDao.findAllByUserName();
+	public List<MatchModel> findAll() {
+		return matchDao.findAll();
 	}
 
 	// huy tran dau (cua user)

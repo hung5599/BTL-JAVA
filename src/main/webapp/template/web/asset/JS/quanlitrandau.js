@@ -41,7 +41,6 @@ function renderBillToTable(bills){
                     else if(j==4) {
                         newCell1.appendChild(document.createTextNode(bill.price))
                         total += bill.price;
-                        console.log(total)
                     }
                     else newCell1.innerHTML =   `
                         <button onclick="saveRowData(this,${bill.id})" ><i class="fa-solid fa-trash-can"></i> </button>                                       `
@@ -49,7 +48,7 @@ function renderBillToTable(bills){
             }
         }
     })
-    
+    showTotal(total)
 }
 
 // Huy tran dau
@@ -67,7 +66,6 @@ function updateSan(id){
            return response.json()
         })
 }
-
 
 function saveRowData(r,id) {
     var cf = confirm("Bạn có chắc chắn muốn hủy sân ? ")
@@ -87,6 +85,7 @@ function saveRowData(r,id) {
             updateSan(ob)
             table.deleteRow(i)
             total -= parseFloat(deletedMatch.cells[4].innerHTML);
+            showTotal(total)
             alert("Hủy sân đấu thành công !")
         }
         else alert("Bạn không thể hủy sân trong vòng 1 ngày diễn ra trận đấu")
@@ -111,4 +110,10 @@ function solve(day) {
     }
     res += days[0];
     return res;
+}
+
+
+function showTotal(tmp) {
+    var sum = document.querySelector(".total__price");
+    sum.innerHTML = tmp
 }

@@ -7,7 +7,7 @@
     <body>
         <div class="content">
             <div class="manage_table football_table">
-                <div class="method">
+                <div class="method" style="margin-top: 83px;">
                     <h2>Sân bóng đá</h2>
                 </div>
                 <table class="table1">
@@ -45,26 +45,5 @@
                     </tr>
                 </table>
             </div>
-            <button class="add_btn " onclick="showAddBox()"><i class="fa-regular fa-square-plus"></i>Thêm sân </button>
-        <div class="model ">
-            <form class="update-form">
-                <div class="close"> 
-                    <button class="close-btn" onclick="closeModel()"><i class="fa-solid fa-square-xmark js-X"></i></button>
-                </div>
-                <h1>Chỉnh sửa thông tin sân</h1>
-                <div class="form-group">
-                    <label for="newPrice">Giá sân : </label>
-                    <input type="text" name="newPrice" required>
-                </div>
-                <div class="form-group">
-                    <label for="newStatus"> Loại sân : </label>
-                    <select name="newStatus" id="newStatus" >
-                        <option value="1">Tốt</option>
-                        <option value="0">Bảo trì </option>
-                    </select>
-                </div>
-                <button class="update">Cập nhật</button>
-            </form>
-        </div>
     </body>
     </html>

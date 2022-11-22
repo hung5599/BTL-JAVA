@@ -11,5 +11,5 @@ public interface IMatchDAO extends GenericDAO<MatchModel>{
 	MatchModel findOneById(Long id);
 	void updateById(Long id);
 	void delete(Long id_san, String time_Start, Date dateOpen, Long categoryId);
-	List<MatchModel> findAllByUserName();
+	List<MatchModel> findAll();
 }

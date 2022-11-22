@@ -14,7 +14,7 @@
 <body>
     <div class="content">
         <div class="manage_table football_table">
-            <h2>Sân bóng đá</h2>
+            <h2 style="margin-top: 82px">Sân bóng đá</h2>
             <table class="table1">
                 <tr>
                     <th>Sân đặt</th>

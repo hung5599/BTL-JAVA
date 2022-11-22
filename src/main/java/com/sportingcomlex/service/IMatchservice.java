@@ -9,5 +9,5 @@ public interface IMatchservice {
 	MatchModel save(MatchModel matchModel);
 	MatchModel delete(MatchModel matchModel);
 	void update(MatchModel matchModel);
-	List<MatchModel> findAllByUserName();
+	List<MatchModel> findAll();
 }

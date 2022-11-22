@@ -20,12 +20,17 @@
 		  height: 400px;
 		  border: 1px solid #9C9C9C;
 		  background-color: #EAEAEA;
+		  border-radius: 10px;
 		}
 		#login .container #login-row #login-column #login-box #login-form {
 		  padding: 20px;
 		}
 		#login .container #login-row #login-column #login-box #login-form #register-link {
 		  margin-top: -85px;
+		}
+		.form-group .btn__login{
+			width: 100%;
+    		background-color: #28a745;
 		}
 	</style>
 </head>

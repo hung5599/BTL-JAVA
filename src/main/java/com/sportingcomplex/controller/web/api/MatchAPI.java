@@ -39,7 +39,7 @@ public class MatchAPI extends HttpServlet{
 		ObjectMapper mapper = new ObjectMapper();
 		// map sang user để get ra ten và tra id_user
 //		UserModel user = HttpUtil.of(request.getReader()).toModel(UserModel.class);
-		List<MatchModel> list = matchService.findAllByUserName();
+		List<MatchModel> list = matchService.findAll();
 		mapper.writeValue(response.getOutputStream(), list);
 	}
 	

@@ -29,5 +29,11 @@
             </table>
         </div>
     </div>
+
+    <!--tong-->
+    <div class="total">
+        <div class="text">Tổng tiền : </div>
+        <div class="sum"><span class="total__price"></span></div>
+    </div>
 </body>
 </html>

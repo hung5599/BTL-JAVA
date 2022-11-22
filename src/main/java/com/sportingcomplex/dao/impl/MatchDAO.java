@@ -47,7 +47,7 @@ public class MatchDAO extends AbstractDAO<MatchModel> implements IMatchDAO{
 	
 	// liet ke danh sach cac tran dau cuar userName (cho user)
 	@Override
-	public List<MatchModel> findAllByUserName() {
+	public List<MatchModel> findAll() {
 		String sql = "select * from match where status = 1";
 		List<MatchModel> list = query(sql, new MatchMapper());
 		return list.isEmpty() ? null : list;
