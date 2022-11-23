@@ -12,27 +12,19 @@
 </head>
 <body>
     <div class="center">
-        <h1 style = "margin-top: 65px">ĐẶT CỌC </h1>
-        <div class="text1">Để sử dụng tính năng đặt sân trực tuyến người dùng hãy thực hiện theo các bước sau :</div>
+        <h1 style = "margin-top: 65px">Thanh Toán </h1>
+        <div class="text1">Có thể thực hiện thanh toán trực tiếp trên website hoặc thanh toán trực tiếp khi đến nhận sân</div>
         <div class="list">
             <ul>
                 <li>Vào ứng dụng ngân hàng của bạn trên điện thoại và chọn chức năng quét mã QR trong đó</li>
                 <li>Quét mã QR bên dưới</li>
-                <li>Nhập số tiền cọc ( tối thiểu 50% ) </li>
-                <li>Nội dung chuyển tiền: Ngày giờ đặt_ Người đặt_ Số sân </li>
-                <li>Hoàn tất quá trình chuyển tiền ( tên người nhận tiền là Nguyễn Trọng Huong  ) </li>
-                <li>Sau khi thanh toán người dùng chụp lại màn hình rồi up file ảnh bên dưới</li>
+                <li>Nhập số tiền cần thanh toán</li>
+                <li>Nội dung chuyển tiền: Ngày giờ đặt-Người đặt-Số sân-Loại sân </li>
             </ul>
         </div>
         <!-- <img id="img2" src="/Front-End-BTL/img/qr.png" alt=""> -->
         <img id="img2" src="<c:url value = 'template/web/asset/img/qr.png'/>" alt="">
-        <div class="input-file">
-            <label for="">
-                <input type="file" title="Chọn file ảnh">
-                <br>
-                <button type="submit"> Submit</button>
-            </label>
-        </div>
+        
     </div>
     <div class="backimg">
         <!--./asset/img/Sports.png-->
