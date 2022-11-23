@@ -35,23 +35,16 @@ public class MatchService implements IMatchservice{
 		return null;
 	}
 
-	// xóa trận đấu (chỉ admin có quyền xóa)
-	@Override
-	public MatchModel delete(MatchModel matchModel) {
-		matchDao.delete(matchModel.getId_San(), matchModel.getTime_Start(), matchModel.getDateOpen(), matchModel.getCategoryId());
-		return null;
-	}
-
 	// liet ke danh sach cac tran dau 
 	@Override
 	public List<MatchModel> findAll() {
 		return matchDao.findAll();
 	}
 
-	// huy tran dau (cua user)
+	// xoa tran dau
 	@Override
 	public void update(MatchModel matchModel) {
 		billDao.delete(matchModel.getId());
-		matchDao.updateById(matchModel.getId());
+		matchDao.delete(matchModel.getId());;
 	}
 }

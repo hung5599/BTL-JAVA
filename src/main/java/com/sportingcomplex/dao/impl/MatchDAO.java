@@ -40,9 +40,9 @@ public class MatchDAO extends AbstractDAO<MatchModel> implements IMatchDAO{
 
 	// xoas tran dau ra khoi database
 	@Override
-	public void delete(Long id_san, String time_Start, Date dateOpen, Long ccategoryId) {
-		String sql = "delete from match where id_san = ? and time = ? and date_open = ? and categoryid = ?";
-		update(sql, id_san, time_Start, dateOpen, ccategoryId);
+	public void delete(Long id) {
+		String sql = "delete from match where id = ?";
+		update(sql, id);
 	}
 	
 	// liet ke danh sach cac tran dau
@@ -53,10 +53,4 @@ public class MatchDAO extends AbstractDAO<MatchModel> implements IMatchDAO{
 		return list.isEmpty() ? null : list;
 	}
 
-	// update lai trang thai khi dat lai tran dau do 
-	@Override
-	public void updateById(Long id) {
-		String sql = "delete from match where id = ?";
-		update(sql, id);
-	}
 }

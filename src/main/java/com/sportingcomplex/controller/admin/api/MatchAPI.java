@@ -43,7 +43,7 @@ public class MatchAPI extends HttpServlet{
 		response.setContentType("application/json");
 		ObjectMapper mapper = new ObjectMapper();
 		MatchModel matchModel = HttpUtil.of(request.getReader()).toModel(MatchModel.class);
-		matchModel = matchService.delete(matchModel);
+		matchService.update(matchModel);
 		mapper.writeValue(response.getOutputStream(), "{title: xóa trận đấu thành công}");
 	}
 }

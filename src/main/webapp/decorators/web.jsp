@@ -35,5 +35,6 @@
 	
 	<!-- webapp\template\web\asset\JS -->
 	<script type="text/javascript" src = "<c:url value = '/template/web/asset/JS/main.js' />"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" > </script>
 </body>
 </html>

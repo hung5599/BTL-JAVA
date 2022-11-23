@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="center">
-        <h1>ĐẶT CỌC </h1>
+        <h1 style = "margin-top: 65px">ĐẶT CỌC </h1>
         <div class="text1">Để sử dụng tính năng đặt sân trực tuyến người dùng hãy thực hiện theo các bước sau :</div>
         <div class="list">
             <ul>

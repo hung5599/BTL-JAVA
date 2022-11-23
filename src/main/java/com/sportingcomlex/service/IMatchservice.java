@@ -7,7 +7,6 @@ import com.sportingcomplex.model.UserModel;
 
 public interface IMatchservice {
 	MatchModel save(MatchModel matchModel);
-	MatchModel delete(MatchModel matchModel);
 	void update(MatchModel matchModel);
 	List<MatchModel> findAll();
 }

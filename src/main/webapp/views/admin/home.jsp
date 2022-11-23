@@ -21,6 +21,7 @@
                     <th>Tên người đặt</th>
                     <th>Thời gian</th>
                     <th>Ngày</th>
+                    <th>Xóa trận</th>
                 </tr>
             </table>
         </div>
@@ -32,6 +33,7 @@
                     <th>Tên người đặt</th>
                     <th>Thời gian</th>
                     <th>Ngày</th>
+                    <th>Xóa trận</th>
                 </tr>
             </table>
         </div>
@@ -43,6 +45,7 @@
                     <th>Tên người đặt</th>
                     <th>Thời gian</th>
                     <th>Ngày</th>
+                    <th>Xóa trận</th>
                 </tr>
             </table>
         </div>
