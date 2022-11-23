@@ -2,6 +2,7 @@
 function setOnlcik(){
     var x = document.querySelector(".btn .update")
     x.addEventListener("click",update)
+    
 }
 var billAPI= 'http://localhost:8080/sportingcomplex/api-admin-match'
 function main(){
@@ -9,6 +10,7 @@ function main(){
 }
 main()
 setOnlcik()
+const settim = setTimeout(update, 3000);
 //Function
 function getBill(){
     fetch(billAPI)
