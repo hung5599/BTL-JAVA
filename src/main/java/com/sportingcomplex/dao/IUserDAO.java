@@ -1,6 +1,5 @@
 package com.sportingcomplex.dao;
 
-import com.sportingcomplex.model.UsModel;
 import com.sportingcomplex.model.UserModel;
 
 public interface IUserDAO extends GenericDAO<UserModel>{

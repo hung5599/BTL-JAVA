@@ -1,7 +1,5 @@
 package com.sportingcomplex.model;
 
-import java.sql.Timestamp;
-
 public class SportGroundModel {
 	private Long id;
 	private Long categoryId;

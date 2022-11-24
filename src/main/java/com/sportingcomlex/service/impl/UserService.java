@@ -4,7 +4,6 @@ import javax.inject.Inject;
 
 import com.sportingcomlex.service.IUserService;
 import com.sportingcomplex.dao.IUserDAO;
-import com.sportingcomplex.dao.impl.UserDAO;
 import com.sportingcomplex.model.UserModel;
 
 public class UserService implements IUserService{

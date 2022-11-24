@@ -19,8 +19,6 @@ public class HttpUtil {
 			while((value = br.readLine()) != null) {
 				json.append(value);
 			}
-			System.out.print(json.toString());
-			String t = json.toString();
 			return new HttpUtil(json.toString());
 		} catch(IOException e) {
 			return null;

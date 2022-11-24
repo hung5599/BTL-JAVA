@@ -1,7 +1,6 @@
 package com.sportingcomplex.model;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 
 public class MatchModel implements Comparable<MatchModel>{
 	private Long id;

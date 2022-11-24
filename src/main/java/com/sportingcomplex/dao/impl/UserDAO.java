@@ -11,9 +11,7 @@ public class UserDAO extends AbstractDAO<UserModel> implements IUserDAO {
 	// dang nhap
 	@Override
 	public UserModel findByUserNameAndPassword(String userName, String passWord) {
-		String sql = "SELECT * FROM users AS u"
-					+" INNER JOIN role AS r ON r.id = u.roleid"
-					+" WHERE username = ? AND password = ?";
+		String sql = "select * from users inner join role on role.id = users.roleid where username = ? and password = ?";
 		List<UserModel> users = query(sql, new UserMapper(), userName, passWord);
 		if(users.isEmpty()) {
 			return null;
@@ -32,21 +30,19 @@ public class UserDAO extends AbstractDAO<UserModel> implements IUserDAO {
 	// tim theo username de dang ky
 	@Override
 	public UserModel findByUserName(String userName) {
-		String sql = "SELECT * FROM users AS u"
-				+" INNER JOIN role AS r ON r.id = u.roleid"
-				+" WHERE username = ?";
-		List<UserModel> users = query(sql.toString(), new UserMapper(), userName);
+		String sql = "select * from users inner join role on role.id = users.roleid where username = ?";
+		List<UserModel> users = query(sql, new UserMapper(), userName);
 		if(users.isEmpty()) {
 			return null;
 		}
-		return users.get(0);
+		return users.get(0);	
 	}
 
 	// tim user theo id
 	@Override
 	public UserModel findOne(Long id) {
 		String sql = "select * from users where id = ?";
-		List<UserModel>  userList = query(sql, new UserMapper(), id);
-		return userList.isEmpty() ? null : userList.get(0);
+		List<UserModel>  list = query(sql, new UserMapper(), id);
+		return list.isEmpty() ? null : list.get(0);
 	}
 }

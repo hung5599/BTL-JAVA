@@ -1,28 +1,24 @@
 package com.sportingcomplex.dao.impl;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
-import java.sql.Types;
-import java.sql.Date;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.lang.ObjectUtils.Null;
-import org.codehaus.jackson.map.jsontype.impl.AsExternalTypeSerializer;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
-import com.google.common.base.Service.State;
 import com.sportingcomlex.mapper.RowMapper;
 import com.sportingcomplex.dao.GenericDAO;
 
 public class AbstractDAO<T> implements GenericDAO<T> {
 
-	// load driver của sql server để kết nối csdl
-	// mở kết nối tới csdl
+	// load driver cá»§a sql server Ä‘á»ƒ káº¿t ná»‘i csdl
+	// má»Ÿ káº¿t ná»‘i tá»›i csdl
 	protected Connection getConnection() {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -35,7 +31,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 		}
 	}
 	
-	// set parameter truyền vào các câu lệnh sql
+	// set parameter truyá»�n vÃ o cÃ¡c cÃ¢u lá»‡nh sql
 	private void setParameter(PreparedStatement statement, Object...parameters) {
 		try {
 			for(int i = 0; i < parameters.length; i++) {

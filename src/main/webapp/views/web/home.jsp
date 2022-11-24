@@ -57,9 +57,9 @@
 		</div>
 		<form action="https://www.google.com.vn/search">
 			<div class="seacher">
-				<input type="text" name="search"
+				<input type="text" name="q"
 					placeholder="Tìm kiếm thông tin thể thao">
-				<button type="button">TÌM KIẾM</button>
+				<button type="submit">TÌM KIẾM</button>
 			</div>
 		</form>
 		<div class="slogan">THỂ THAO KẾT NỐI MỌI NGƯỜI</div>

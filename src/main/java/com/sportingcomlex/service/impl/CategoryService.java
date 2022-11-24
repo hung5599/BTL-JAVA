@@ -6,7 +6,6 @@ import javax.inject.Inject;
 
 import com.sportingcomlex.service.ICategoryService;
 import com.sportingcomplex.dao.ICategoryDAO;
-import com.sportingcomplex.dao.impl.CategoryDAO;
 import com.sportingcomplex.model.CategoryModel;
 
 public class CategoryService implements ICategoryService{

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sportingcomlex.service.IUserService;
-import com.sportingcomplex.model.UsModel;
 import com.sportingcomplex.model.UserModel;
 import com.sportingcomplex.utils.HttpUtil;
 

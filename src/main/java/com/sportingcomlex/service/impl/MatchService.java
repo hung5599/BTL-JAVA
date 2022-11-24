@@ -7,10 +7,7 @@ import javax.inject.Inject;
 import com.sportingcomlex.service.IMatchservice;
 import com.sportingcomplex.dao.IBillDAO;
 import com.sportingcomplex.dao.IMatchDAO;
-import com.sportingcomplex.dao.IUserDAO;
-import com.sportingcomplex.model.BillModel;
 import com.sportingcomplex.model.MatchModel;
-import com.sportingcomplex.model.UserModel;
 
 public class MatchService implements IMatchservice{
 
@@ -19,7 +16,7 @@ public class MatchService implements IMatchservice{
 	@Inject
 	private IBillDAO billDao;
 	
-	// them trận đấu vào database
+	// them tran dau vao database
 	@Override
 	public MatchModel save(MatchModel matchModel) {
 		// tim tran dau theo id_san, Time, dateOpen, categoryId

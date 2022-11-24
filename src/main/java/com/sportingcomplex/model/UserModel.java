@@ -1,8 +1,5 @@
 package com.sportingcomplex.model;
 
-import java.sql.Date;
-import java.sql.Timestamp;
-
 public class UserModel {
 	private Long id;
 	private String userName;

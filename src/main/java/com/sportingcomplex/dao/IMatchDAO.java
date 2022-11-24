@@ -1,7 +1,7 @@
 package com.sportingcomplex.dao;
 
-import java.sql.Timestamp;
-import java.util.*;
+import java.util.Date;
+import java.util.List;
 
 import com.sportingcomplex.model.MatchModel;
 
